@@ -41,7 +41,9 @@ namespace Costos_por_órdenes_de_producción
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            Search searc = new Search();
+            searc.Show();
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -56,6 +58,13 @@ namespace Costos_por_órdenes_de_producción
             this.Visible = false;
             Registro regis = new Registro();
             regis.Show();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Customer_register custom = new Customer_register();
+           custom.Show();
         }
     }
 }

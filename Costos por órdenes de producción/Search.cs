@@ -38,5 +38,17 @@ namespace Costos_por_órdenes_de_producción
             Form1 form = new Form1();
             form.Show();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Modify mod = new Modify();
+            mod.Show();
+        }
+
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
