@@ -10,9 +10,9 @@ namespace Costos_por_órdenes_de_producción.Classes
     {
         public static String PERSONA_NATURAL = "Persona Natural";
         public static String PERSONA_JURIDICA = "Persona Juridica";
-        private String name { get; set; }
-        private String id { get; set; }
-        private String tipo { get; set; }
+        public String name { get; set; }
+        public String id { get; set; }
+        public String tipo { get; set; }
 
         public Cliente(String n, String i, String t)
         {

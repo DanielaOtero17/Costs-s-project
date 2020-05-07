@@ -29,6 +29,33 @@ namespace Costos_por_órdenes_de_producción.Classes
             addDataArticle(articulo);
 
         }
+        public void registerClient(String name, String id, String typ)
+        {
+            Cliente client = new Cliente(name, id, typ);
+
+            clients.Add(client);
+            addDataClient(client);
+        }
+
+        public void addDataClient(Cliente cli)
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\clientes.txt";
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine(cli.name + "/" + cli.id + "/" + cli.tipo);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine( cli.name + "/" + cli.id + "/" + cli.tipo);
+                }
+            }
+        }
 
         public void addDataArticle(Articulo art)
         {
