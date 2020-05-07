@@ -118,6 +118,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "REGISTRAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // radioButton1
             // 

@@ -8,9 +8,9 @@ namespace Costos_por_órdenes_de_producción.Classes
 {
     class Articulo
     {
-        private String name { get; set; }
-        private String description { get; set; }
-        private int number { get; set; }
+        public String name { get; set; }
+        public String description { get; set; }
+        public int number { get; set; }
 
         public Articulo(String n, String desc, int num)
         {
