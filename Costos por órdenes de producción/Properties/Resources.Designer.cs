@@ -83,6 +83,16 @@ namespace Costos_por_órdenes_de_producción.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancelarButton {
+            get {
+                object obj = ResourceManager.GetObject("cancelarButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CLIENTES {
             get {
                 object obj = ResourceManager.GetObject("CLIENTES", resourceCulture);
@@ -116,6 +126,26 @@ namespace Costos_por_órdenes_de_producción.Properties {
         internal static System.Drawing.Bitmap DATA1 {
             get {
                 object obj = ResourceManager.GetObject("DATA1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gestionTitle {
+            get {
+                object obj = ResourceManager.GetObject("gestionTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap guardarButton {
+            get {
+                object obj = ResourceManager.GetObject("guardarButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,18 +10,23 @@ using System.Windows.Forms;
 
 namespace Costos_por_órdenes_de_producción
 {
-    public partial class Registro : Form
+    public partial class GestionOrden : Form
     {
-        public Registro()
+        public GestionOrden()
         {
             InitializeComponent();
         }
 
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
+            Form1 principal= new Form1();
             this.Hide();
-            Form1 form = new Form1();
-            form.Show();
+            principal.Show();
         }
     }
 }

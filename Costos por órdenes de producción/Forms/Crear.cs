@@ -53,8 +53,8 @@ namespace Costos_por_órdenes_de_producción
         private void Button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Orden order = new Orden();
-            order.Show();
+            GestionOrden gestionOrden = new GestionOrden();
+            gestionOrden.Show();
         }
     }
 }
