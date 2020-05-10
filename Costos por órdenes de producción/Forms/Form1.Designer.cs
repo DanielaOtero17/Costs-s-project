@@ -34,6 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.button5.BackgroundImage = global::Costos_por_órdenes_de_producción.Properties.Resources.PRODUCTOS;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(354, 349);
+            this.button5.Location = new System.Drawing.Point(250, 349);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(182, 104);
             this.button5.TabIndex = 6;
@@ -64,7 +65,7 @@
             this.button4.BackgroundImage = global::Costos_por_órdenes_de_producción.Properties.Resources.CLIENTES;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(141, 350);
+            this.button4.Location = new System.Drawing.Point(33, 349);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(182, 104);
             this.button4.TabIndex = 5;
@@ -108,12 +109,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Violet;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Location = new System.Drawing.Point(460, 349);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(182, 104);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "REGISTRO DE OPERARIOS";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(673, 478);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -136,6 +151,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button6;
     }
 }
 

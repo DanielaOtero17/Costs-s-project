@@ -57,26 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.DimGray;
-            this.label6.Font = new System.Drawing.Font("Arial Unicode MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(569, 149);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 36);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "000";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(120, 271);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 30);
-            this.textBox1.TabIndex = 15;
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.CustomFormat = "DD/MM/AAAA";
@@ -110,6 +90,26 @@
             dateTimePicker3.TabIndex = 21;
             dateTimePicker3.Value = new System.DateTime(2020, 3, 25, 0, 0, 0, 0);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.DimGray;
+            this.label6.Font = new System.Drawing.Font("Arial Unicode MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(569, 149);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 36);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "000";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(120, 271);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 30);
+            this.textBox1.TabIndex = 15;
+            // 
             // richTextBox1
             // 
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -118,6 +118,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(299, 120);
             this.richTextBox1.TabIndex = 23;
             this.richTextBox1.Text = "Ingrese aquí la descripción de la producción...";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
             // 
             // label2
             // 
@@ -232,7 +233,7 @@
             this.checkedListBox1.Items.AddRange(new object[] {
             "Pendiente",
             "En Producción",
-            "Orden Lista"});
+            "Terminada"});
             this.checkedListBox1.Location = new System.Drawing.Point(419, 361);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(137, 72);
@@ -323,6 +324,7 @@
             this.Controls.Add(this.button1);
             this.Name = "GestionOrden";
             this.Text = "Orden";
+            this.Load += new System.EventHandler(this.GestionOrden_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

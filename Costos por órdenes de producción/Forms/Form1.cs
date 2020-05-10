@@ -66,5 +66,13 @@ namespace Costos_por_órdenes_de_producción
             Customer_register custom = new Customer_register();
            custom.Show();
         }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Forms.RegistroOperario reg = new Forms.RegistroOperario();
+
+            reg.Show();
+        }
     }
 }

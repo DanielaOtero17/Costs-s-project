@@ -48,7 +48,15 @@
   <ItemGroup>
     <Compile Include="Classes\Articulo.cs" />
     <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\Operario.cs" />
     <Compile Include="Classes\Principal.cs" />
+    <Compile Include="Classes\TipoLabor.cs" />
+    <Compile Include="Forms\CostosIndirectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CostosIndirectos.Designer.cs">
+      <DependentUpon>CostosIndirectos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Crear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +81,18 @@
     <Compile Include="Forms\GestionOrden.Designer.cs">
       <DependentUpon>GestionOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HojaCostos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HojaCostos.Designer.cs">
+      <DependentUpon>HojaCostos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManoObra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManoObra.Designer.cs">
+      <DependentUpon>ManoObra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +104,24 @@
     </Compile>
     <Compile Include="Forms\Orden.Designer.cs">
       <DependentUpon>Orden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegistroOperario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistroOperario.Designer.cs">
+      <DependentUpon>RegistroOperario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RequisicionMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RequisicionMateriales.Designer.cs">
+      <DependentUpon>RequisicionMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasa.Designer.cs">
+      <DependentUpon>Tasa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orden.resx">
       <DependentUpon>Orden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistroOperario.resx">
+      <DependentUpon>RegistroOperario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RequisicionMateriales.resx">
+      <DependentUpon>RequisicionMateriales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

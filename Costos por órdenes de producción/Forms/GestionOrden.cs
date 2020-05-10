@@ -28,5 +28,15 @@ namespace Costos_por_órdenes_de_producción
             this.Hide();
             principal.Show();
         }
+
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GestionOrden_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
