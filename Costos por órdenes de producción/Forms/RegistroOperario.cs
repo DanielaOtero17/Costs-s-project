@@ -66,8 +66,9 @@ namespace Costos_por_órdenes_de_producción.Forms
                         else
                         {
                             String[] tipochar = tipocomp.Split('/');
-                            double val = double.Parse(tipochar[1]);
-                            principal.worktypes.Add(new Classes.TipoLabor(tipochar[0], val));                             
+                            MessageBox.Show(tipocomp);
+                           double val = double.Parse(tipochar[1]);
+                           principal.worktypes.Add(new Classes.TipoLabor(tipochar[0], val));                             
                         }
                     }                   
                 }

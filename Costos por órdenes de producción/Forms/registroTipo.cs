@@ -15,7 +15,6 @@ namespace Costos_por_órdenes_de_producción.Forms
         private Classes.Principal principal { get; set; }
         private Form1 ventanaPrincipal { get; set; }
 
-
         public registroTipo()
         {
             principal = new Classes.Principal();
@@ -51,9 +50,6 @@ namespace Costos_por_órdenes_de_producción.Forms
             }  
             
         }
-
-        
-
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
 

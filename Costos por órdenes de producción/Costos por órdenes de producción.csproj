@@ -49,6 +49,7 @@
     <Compile Include="Classes\Articulo.cs" />
     <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\Operario.cs" />
+    <Compile Include="Classes\Pedido.cs" />
     <Compile Include="Classes\Principal.cs" />
     <Compile Include="Classes\TipoLabor.cs" />
     <Compile Include="Forms\CostosIndirectos.cs">
