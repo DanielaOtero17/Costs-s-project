@@ -12,9 +12,11 @@ namespace Costos_por_órdenes_de_producción
 {
     public partial class Form1 : Form
     {
+        public Forms.RegistroOperario regis;
         public Form1()
         {
             InitializeComponent();
+            regis = new Forms.RegistroOperario();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -70,9 +72,7 @@ namespace Costos_por_órdenes_de_producción
         private void Button6_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Forms.RegistroOperario reg = new Forms.RegistroOperario();
-
-            reg.Show();
+            regis.Show();
         }
     }
 }

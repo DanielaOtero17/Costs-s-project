@@ -111,6 +111,12 @@
     <Compile Include="Forms\RegistroOperario.Designer.cs">
       <DependentUpon>RegistroOperario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\registroTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\registroTipo.Designer.cs">
+      <DependentUpon>registroTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RequisicionMateriales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistroOperario.resx">
       <DependentUpon>RegistroOperario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\registroTipo.resx">
+      <DependentUpon>registroTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RequisicionMateriales.resx">
       <DependentUpon>RequisicionMateriales.cs</DependentUpon>
@@ -240,6 +249,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancelarButton.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrarOperarioTitle.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OPERARIOS_BTN.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

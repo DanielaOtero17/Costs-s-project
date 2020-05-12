@@ -62,5 +62,10 @@ namespace Costos_por_órdenes_de_producción
             radioButton1.Checked = false;
             radioButton2.Checked = false;
         }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -183,6 +183,16 @@ namespace Costos_por_órdenes_de_producción.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OPERARIOS_BTN {
+            get {
+                object obj = ResourceManager.GetObject("OPERARIOS_BTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ORDEN_TRABAJO {
             get {
                 object obj = ResourceManager.GetObject("ORDEN_TRABAJO", resourceCulture);
@@ -206,6 +216,16 @@ namespace Costos_por_órdenes_de_producción.Properties {
         internal static System.Drawing.Bitmap PRODUCTOS {
             get {
                 object obj = ResourceManager.GetObject("PRODUCTOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap registrarOperarioTitle {
+            get {
+                object obj = ResourceManager.GetObject("registrarOperarioTitle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

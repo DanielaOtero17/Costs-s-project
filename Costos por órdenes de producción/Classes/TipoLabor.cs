@@ -13,7 +13,7 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         public TipoLabor(String n, double vph)
         {
-            name = name;
+            name = n;
             valuePerhour = vph;
         }
 

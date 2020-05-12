@@ -1,0 +1,3 @@
+﻿Manufactura/13400
+Ensamblaje/10000
+

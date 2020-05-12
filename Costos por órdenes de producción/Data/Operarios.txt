@@ -1,0 +1,3 @@
+Operario p1/11223344/Costos_por_órdenes_de_producción.Classes.TipoLabor
+Operario p2/12343546/Costos_por_órdenes_de_producción.Classes.TipoLabor
+Operario p3/3454665/cuatrico 
