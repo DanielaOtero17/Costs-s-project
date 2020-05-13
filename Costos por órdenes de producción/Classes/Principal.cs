@@ -15,6 +15,8 @@ namespace Costos_por_órdenes_de_producción.Classes
         public List<Cliente> clients { get; set; }
         public List<Operario> workers { get; set; }
         public List<TipoLabor> worktypes { get; set; }
+
+        public List<Pedido> pedidos { get;set; }
         public Principal()
         {
             articles = new List<Articulo>();
@@ -39,6 +41,14 @@ namespace Costos_por_órdenes_de_producción.Classes
             clients.Add(client);
             addDataClient(client);
         }
+        public void registrarPedido(int codigo, int cantidad, Cliente cli, Articulo art, DateTime fecha )
+        {
+            Pedido pedido = new Pedido(codigo, cantidad, cli, art, fecha);
+
+            pedidos.Add(pedido);
+            addDataPedido(pedido);
+
+        }
 
         public void registrarTipo(String name, double value)
         {
@@ -55,6 +65,25 @@ namespace Costos_por_órdenes_de_producción.Classes
             addDataWorkers(worker);
         }
 
+        public void addDataPedido(Pedido ped)
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Pedidos.txt";
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente + "/" + ped.articulo + "/" + ped.fechaCreacion);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente + "/" + ped.articulo + "/" + ped.fechaCreacion);
+                }
+            }
+        }
         public void addDataClient(Cliente cli)
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\clientes.txt";

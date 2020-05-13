@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker dateTimePicker1;
+            System.Windows.Forms.DateTimePicker fechaPedido;
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,22 +42,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            fechaPedido = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // fechaPedido
             // 
-            dateTimePicker1.CustomFormat = "DD/MM/AAAA";
-            dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new System.Drawing.Point(71, 218);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new System.Drawing.Size(106, 26);
-            dateTimePicker1.TabIndex = 3;
-            dateTimePicker1.Value = new System.DateTime(2020, 3, 25, 0, 0, 0, 0);
-            dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            fechaPedido.CustomFormat = "DD/MM/AAAA";
+            fechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            fechaPedido.Location = new System.Drawing.Point(71, 218);
+            fechaPedido.Name = "fechaPedido";
+            fechaPedido.Size = new System.Drawing.Size(106, 26);
+            fechaPedido.TabIndex = 3;
+            fechaPedido.Value = new System.DateTime(2020, 3, 25, 0, 0, 0, 0);
+            fechaPedido.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // button1
             // 
@@ -200,6 +200,7 @@
             this.comboBox2.Size = new System.Drawing.Size(282, 33);
             this.comboBox2.TabIndex = 14;
             this.comboBox2.Text = "Seleccionar...";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // Crear
             // 
@@ -217,7 +218,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(dateTimePicker1);
+            this.Controls.Add(fechaPedido);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

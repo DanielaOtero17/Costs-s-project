@@ -59,6 +59,7 @@ namespace Costos_por_órdenes_de_producción
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             GestionOrden gestionOrden = new GestionOrden();
             gestionOrden.Show();
@@ -150,8 +151,12 @@ namespace Costos_por_órdenes_de_producción
             }
         }
 
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

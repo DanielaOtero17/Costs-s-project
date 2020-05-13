@@ -17,11 +17,14 @@ namespace Costos_por_órdenes_de_producción.Classes
         //Artículo que se va a producir
         public Articulo articulo { get; set; }
 
+        public DateTime fechaCreacion  { get;set; } 
 
-        public Pedido(int i, Cliente cli, Articulo art, int cant)
+
+        public Pedido(int i, int cant, Cliente cli, Articulo art, DateTime fecha)
         {
             numeroPedido = i;
             cantidad = cant;
+            fechaCreacion = fecha;
             art = null;
             cli = null;
         }
