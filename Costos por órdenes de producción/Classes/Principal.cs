@@ -141,7 +141,6 @@ namespace Costos_por_órdenes_de_producción.Classes
                 {
                     sw.WriteLine(art.name + "/" + art.description + "/" + art.number);
                 }
-
             }
         }
 

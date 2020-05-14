@@ -233,6 +233,16 @@ namespace Costos_por_órdenes_de_producción.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RequisicionTitle {
+            get {
+                object obj = ResourceManager.GetObject("RequisicionTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_box {
             get {
                 object obj = ResourceManager.GetObject("search_box", resourceCulture);

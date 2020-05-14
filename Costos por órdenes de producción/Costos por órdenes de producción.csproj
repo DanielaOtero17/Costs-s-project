@@ -257,5 +257,8 @@
   <ItemGroup>
     <None Include="Resources\OPERARIOS_BTN.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RequisicionTitle.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

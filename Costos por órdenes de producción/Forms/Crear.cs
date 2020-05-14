@@ -26,6 +26,8 @@ namespace Costos_por_órdenes_de_producción
         {
             actualizarComboBox_Clientes();
             actualizarComboBox_Articulos();
+            cargarPedidos();
+            cargarCodigo();
 
         }
 
@@ -67,8 +69,47 @@ namespace Costos_por_órdenes_de_producción
             principal.registrarPedido(int.Parse(label6.Text), int.Parse(textBox2.Text), cli, art, fecha);
             MessageBox.Show(null," Continuemos con el formulario de Requisición.", "Registro satisfactorio");
             this.Hide();
-            GestionOrden gestionOrden = new GestionOrden();
-            gestionOrden.Show();
+            Forms.RequisicionMateriales requisicion = new Forms.RequisicionMateriales();
+            requisicion.Show();
+        }
+
+        private void cargarCodigo()
+        {
+            int counter = principal.pedidos.Count;
+            label6.Text = counter + 1 + "";
+        }
+
+        public void cargarPedidos()
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Pedidos.txt";
+
+            if (File.Exists(path))
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    Boolean verif = false;
+                    while (verif == false)
+                    {
+                        String tipocomp = sr.ReadLine();
+
+                        if (tipocomp == null)
+                        {
+                            verif = true;
+                        }
+                        else
+                        {
+                            String[] tipochar = tipocomp.Split('/');
+
+                            
+                            principal.pedidos.Add(new Classes.Pedido(int.Parse(tipochar[0]), int.Parse(tipochar[1]),
+                                principal.searchClient(tipochar[2]), principal.searchArticle(tipochar[3]),
+                               new DateTime(int.Parse(tipochar[6]), int.Parse(tipochar[5]), 
+                               int.Parse(tipochar[4]))));
+
+                        }
+                    }
+                }
+            }
         }
 
         private String darIdClienteEscogido()
@@ -180,7 +221,7 @@ namespace Costos_por_órdenes_de_producción
         private void Label6_Click(object sender, EventArgs e)
         {
 
-        }
+        }                                       
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {

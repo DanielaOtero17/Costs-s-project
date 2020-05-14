@@ -13,6 +13,8 @@ namespace Costos_por_órdenes_de_producción
     public partial class Form1 : Form
     {
         public Forms.RegistroOperario regis;
+        private Classes.Principal principal;
+
         public Form1()
         {
             InitializeComponent();
@@ -50,10 +52,13 @@ namespace Costos_por_órdenes_de_producción
 
         private void Button3_Click(object sender, EventArgs e)
         {
+
             this.Visible = false;
             Crear crea = new Crear();
+           
             crea.Show();
         }
+
 
         private void Button5_Click(object sender, EventArgs e)
         {

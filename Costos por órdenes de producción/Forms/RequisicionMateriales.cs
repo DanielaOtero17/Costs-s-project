@@ -16,5 +16,10 @@ namespace Costos_por_órdenes_de_producción.Forms
         {
             InitializeComponent();
         }
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
