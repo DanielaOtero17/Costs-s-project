@@ -25,8 +25,17 @@ namespace Costos_por_órdenes_de_producción.Classes
             numeroPedido = i;
             cantidad = cant;
             fechaCreacion = fecha;
-            art = null;
-            cli = null;
+            articulo = art;
+            cliente = cli;
+        }
+
+        public Boolean compareTo(String cliente, String entrada)
+        {
+            if (cliente.Equals(entrada))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

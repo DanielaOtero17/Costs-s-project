@@ -36,6 +36,7 @@ namespace Costos_por_órdenes_de_producción
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             Form1 form = new Form1();
             form.Show();
@@ -44,7 +45,7 @@ namespace Costos_por_órdenes_de_producción
 
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Label3_Click(object sender, EventArgs e)
@@ -59,12 +60,27 @@ namespace Costos_por_órdenes_de_producción
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+            DateTime fecha = fechaPedido.Value;
+            Classes.Cliente cli = principal.searchClient(darIdClienteEscogido());
+            Classes.Articulo art = principal.searchArticle(darIdArticuloEscogido());
+
+            principal.registrarPedido(int.Parse(label6.Text), int.Parse(textBox2.Text), cli, art, fecha);
+            MessageBox.Show(null," Continuemos con el formulario de Requisición.", "Registro satisfactorio");
             this.Hide();
             GestionOrden gestionOrden = new GestionOrden();
             gestionOrden.Show();
         }
 
+        private String darIdClienteEscogido()
+        {
+            String nombreID = comboBox1.SelectedItem.ToString();
+            String[] datosCliente = nombreID.Split('-');
+            return datosCliente[1];
+        }
+        public String darIdArticuloEscogido()
+        {
+            return comboBox2.SelectedItem.ToString();
+        }
         public void LoadData_Clientes()
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\clientes.txt";
@@ -104,7 +120,7 @@ namespace Costos_por_órdenes_de_producción
             //añade los items al comboBox
             for (int i = 0; i < principal.clients.Count; i++)
             {
-                comboBox1.Items.Add(principal.clients[i].name);
+                comboBox1.Items.Add(principal.clients[i].name+"-" + principal.clients[i].id);
             }
         }
 
@@ -157,6 +173,16 @@ namespace Costos_por_órdenes_de_producción
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

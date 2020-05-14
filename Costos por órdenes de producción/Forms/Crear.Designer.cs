@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker fechaPedido;
+            this.fechaPedido = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,22 +42,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            fechaPedido = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // fechaPedido
             // 
-            fechaPedido.CustomFormat = "DD/MM/AAAA";
-            fechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            fechaPedido.Location = new System.Drawing.Point(71, 218);
-            fechaPedido.Name = "fechaPedido";
-            fechaPedido.Size = new System.Drawing.Size(106, 26);
-            fechaPedido.TabIndex = 3;
-            fechaPedido.Value = new System.DateTime(2020, 3, 25, 0, 0, 0, 0);
-            fechaPedido.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            this.fechaPedido.CustomFormat = "DD/MM/AAAA";
+            this.fechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaPedido.Location = new System.Drawing.Point(71, 218);
+            this.fechaPedido.Name = "fechaPedido";
+            this.fechaPedido.Size = new System.Drawing.Size(106, 26);
+            this.fechaPedido.TabIndex = 3;
+            this.fechaPedido.Value = new System.DateTime(2020, 3, 25, 0, 0, 0, 0);
+            this.fechaPedido.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // button1
             // 
@@ -143,13 +142,14 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 30);
             this.textBox2.TabIndex = 9;
+            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(494, 319);
+            this.label4.Location = new System.Drawing.Point(491, 319);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 26);
             this.label4.TabIndex = 10;
@@ -178,6 +178,7 @@
             this.label6.Size = new System.Drawing.Size(60, 36);
             this.label6.TabIndex = 12;
             this.label6.Text = "000";
+            this.label6.Click += new System.EventHandler(this.Label6_Click);
             // 
             // button2
             // 
@@ -218,7 +219,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(fechaPedido);
+            this.Controls.Add(this.fechaPedido);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -247,5 +248,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker fechaPedido;
     }
 }

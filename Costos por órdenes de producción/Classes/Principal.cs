@@ -24,6 +24,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             clients = new List<Cliente>();
             worktypes = new List<TipoLabor>();
             workers = new List<Operario>();
+            pedidos = new List<Pedido>();
         }
 
         public void productRegister(String name, String desc, int code)
@@ -50,6 +51,25 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         }
 
+        public Cliente searchClient(String id)
+        {
+            for(int i = 0; i < clients.Count; i++)
+            {
+                if (id.Equals(clients[i].id))
+                    return clients[i];
+            }
+            return null;
+        }
+        public Articulo searchArticle(String name)
+        {
+            for (int i = 0; i < articles.Count; i++)
+            {
+                if (name.Equals(articles[i].name))
+                    return articles[i];
+            }
+            return null;
+        }
+
         public void registrarTipo(String name, double value)
         {
             TipoLabor tipo = new TipoLabor(name,value);
@@ -73,14 +93,14 @@ namespace Costos_por_órdenes_de_producción.Classes
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente + "/" + ped.articulo + "/" + ped.fechaCreacion);
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente.name + "/" + ped.articulo.name + "/" + ped.fechaCreacion.ToShortDateString());
                 }
             }
             else
             {
                 using (StreamWriter sw = File.AppendText(path))
                 {
-                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente + "/" + ped.articulo + "/" + ped.fechaCreacion);
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente.name + "/" + ped.articulo.name + "/" + ped.fechaCreacion.ToShortDateString());
                 }
             }
         }
