@@ -16,8 +16,9 @@ namespace Costos_por_órdenes_de_producción.Classes
         public List<Operario> workers { get; set; }
         public List<TipoLabor> worktypes { get; set; }
         public List<Pedido> pedidos { get; set; }
-
         public List<RequisicionMaterial> requisiciones {get; set;}
+        public List<ManoDeObra> manos_de_obra { get; set; }
+
         public Principal()
         {
             articles = new List<Articulo>();
@@ -27,6 +28,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             workers = new List<Operario>();
             pedidos = new List<Pedido>();
             requisiciones = new List<RequisicionMaterial>();
+            manos_de_obra = new List<ManoDeObra>();
         }
 
         public void productRegister(String name, String desc, int code)
@@ -131,7 +133,7 @@ namespace Costos_por_órdenes_de_producción.Classes
                         {
                             String[] tipochar = tipocomp.Split('/');
 
-                           pedidos.Add(new Classes.Pedido(int.Parse(tipochar[0]), int.Parse(tipochar[1]),
+                           pedidos.Add(new Pedido(int.Parse(tipochar[0]), int.Parse(tipochar[1]),
                                 searchClient(tipochar[2]), searchArticle(tipochar[3]),
                                new DateTime(int.Parse(tipochar[6]), int.Parse(tipochar[5]),
                                int.Parse(tipochar[4]))));
@@ -142,6 +144,120 @@ namespace Costos_por_órdenes_de_producción.Classes
             }
         }
 
+        public void cargarTipoLabor()
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\tiposDeLabor.txt";
+
+            if (File.Exists(path))
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    Boolean verif = false;
+                    while (verif == false)
+                    {
+                        String tipocomp = sr.ReadLine();
+
+                        if (tipocomp == null)
+                        {
+                            verif = true;
+                        }
+                        else
+                        {
+                            String[] tipochar = tipocomp.Split('/');
+
+                            TipoLabor aux = buscarTipoLabor(tipochar[2]);
+
+                            worktypes.Add(new TipoLabor(tipochar[0],double.Parse(tipochar[1])));
+                        }
+                    }
+                }
+            }
+        }//FALTA COMPLETAR ESTE MÉTODO
+
+        public TipoLabor buscarTipoLabor(String name)
+        {
+            for(int i = 0; i < worktypes.Count; i++){
+
+                if (worktypes[i].name.Equals(name))
+                    return worktypes[i];
+            }
+            return null;
+        }
+
+        public Operario buscarOperario(String name)
+        {
+            for (int i = 0; i < workers.Count; i++)
+            {
+
+                if (worktypes[i].name.Equals(name))
+                    return workers[i];
+            }
+            return null;
+        }
+
+        public void cargarOperarios()
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Operarios.txt";
+
+            if (File.Exists(path))
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    Boolean verif = false;
+                    while (verif == false)
+                    {
+                        String tipocomp = sr.ReadLine();
+
+                        if (tipocomp == null)
+                        {
+                            verif = true;
+                        }
+                        else
+                        {
+                            String[] tipochar = tipocomp.Split('/');
+
+                            TipoLabor aux = buscarTipoLabor(tipochar[2]);
+
+                            workers.Add(new Operario(tipochar[0], tipochar[1], aux));
+
+                        }
+                    }
+                }
+            }
+        }
+
+        public void cargarManos_de_Obra() //FALTA COMPLETAR ESTE MÉTODO
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Mano de Obra.txt";
+
+            if (File.Exists(path))
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    Boolean verif = false;
+                    while (verif == false)
+                    {
+                        String tipocomp = sr.ReadLine();
+
+                        if (tipocomp == null)
+                        {
+                            verif = true;
+                        }
+                        else
+                        {
+                            String[] tipochar = tipocomp.Split('/');
+
+                            TipoLabor aux = buscarTipoLabor(tipochar[2]);
+
+
+                            //FALTA COMPLETAR
+                            manos_de_obra.Add(new ManoDeObra(int.Parse(tipochar[0]), null));
+
+                        }
+                    }
+                }
+            }
+        }
         public void LoadData_Articulos()
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\articulos.txt";
@@ -320,5 +436,7 @@ namespace Costos_por_órdenes_de_producción.Classes
                 }
             }
         }
+
+
     }
 }

@@ -82,7 +82,9 @@ namespace Costos_por_órdenes_de_producción
 
         private void Button7_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            Forms.Reportes reporte = new Forms.Reportes();
+            reporte.Show();
         }
     }
 }

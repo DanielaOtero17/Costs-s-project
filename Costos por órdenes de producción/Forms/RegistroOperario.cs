@@ -123,7 +123,7 @@ namespace Costos_por_órdenes_de_producción.Forms
                 principal.registrarOperario(textBox1.Text,textBox2.Text,darLaborEscogida());
                 MessageBox.Show("Se ha registrado correctamente el operario " + textBox1.Text);
                 clean();              
-                //  regisOp.Show();
+                
             }
         }
         public void clean()

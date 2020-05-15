@@ -23,6 +23,8 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         public double CIF_presupuestado { get; set; }
 
+        public List<Operario> trabajadores_MO { get; set; }
+
 
         public Pedido(int i, int cant, Cliente cli, Articulo art, DateTime fecha)
         {
@@ -33,6 +35,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             cliente = cli;
             requisicion = null;
             CIF_presupuestado = 0;
+            trabajadores_MO = null;
         }
 
         public Boolean compareTo(String cliente, String entrada)

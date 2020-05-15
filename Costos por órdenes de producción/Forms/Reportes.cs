@@ -16,5 +16,10 @@ namespace Costos_por_órdenes_de_producción.Forms
         {
             InitializeComponent();
         }
+
+        private void Reportes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

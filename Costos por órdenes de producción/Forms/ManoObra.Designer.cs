@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tablaMateriales = new System.Windows.Forms.DataGridView();
+            this.tablaManoObra = new System.Windows.Forms.DataGridView();
+            this.columnaOperario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,12 +48,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.columnaOperario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaMateriales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaManoObra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -64,23 +64,52 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // tablaMateriales
+            // tablaManoObra
             // 
-            this.tablaMateriales.BackgroundColor = System.Drawing.Color.OldLace;
-            this.tablaMateriales.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tablaMateriales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.tablaMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaMateriales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tablaManoObra.BackgroundColor = System.Drawing.Color.OldLace;
+            this.tablaManoObra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablaManoObra.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.tablaManoObra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaManoObra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaOperario,
             this.columnaCantidad,
             this.ColumnaPrecioUnitario,
             this.columnaValorTotal});
-            this.tablaMateriales.Location = new System.Drawing.Point(12, 215);
-            this.tablaMateriales.Name = "tablaMateriales";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaMateriales.Size = new System.Drawing.Size(649, 202);
-            this.tablaMateriales.TabIndex = 34;
+            this.tablaManoObra.Location = new System.Drawing.Point(12, 215);
+            this.tablaManoObra.Name = "tablaManoObra";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaManoObra.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.tablaManoObra.Size = new System.Drawing.Size(649, 202);
+            this.tablaManoObra.TabIndex = 34;
+            // 
+            // columnaOperario
+            // 
+            this.columnaOperario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnaOperario.DefaultCellStyle = dataGridViewCellStyle5;
+            this.columnaOperario.HeaderText = "OPERARIO";
+            this.columnaOperario.Name = "columnaOperario";
+            // 
+            // columnaCantidad
+            // 
+            this.columnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.columnaCantidad.HeaderText = "HORAS TRABAJADAS";
+            this.columnaCantidad.Name = "columnaCantidad";
+            this.columnaCantidad.Width = 131;
+            // 
+            // ColumnaPrecioUnitario
+            // 
+            this.ColumnaPrecioUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnaPrecioUnitario.HeaderText = "PRECIO UNITARIO";
+            this.ColumnaPrecioUnitario.Name = "ColumnaPrecioUnitario";
+            this.ColumnaPrecioUnitario.ReadOnly = true;
+            this.ColumnaPrecioUnitario.Width = 116;
+            // 
+            // columnaValorTotal
+            // 
+            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
+            this.columnaValorTotal.Name = "columnaValorTotal";
+            this.columnaValorTotal.ReadOnly = true;
             // 
             // pictureBox2
             // 
@@ -136,6 +165,7 @@
             this.button3.TabIndex = 40;
             this.button3.Text = "Agregar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // label1
             // 
@@ -179,6 +209,7 @@
             this.comboBox1.Size = new System.Drawing.Size(217, 24);
             this.comboBox1.TabIndex = 44;
             this.comboBox1.Text = "Seleccionar...";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -218,35 +249,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // columnaOperario
-            // 
-            this.columnaOperario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnaOperario.DefaultCellStyle = dataGridViewCellStyle1;
-            this.columnaOperario.HeaderText = "OPERARIO";
-            this.columnaOperario.Name = "columnaOperario";
-            // 
-            // columnaCantidad
-            // 
-            this.columnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnaCantidad.HeaderText = "HORAS TRABAJADAS";
-            this.columnaCantidad.Name = "columnaCantidad";
-            this.columnaCantidad.Width = 131;
-            // 
-            // ColumnaPrecioUnitario
-            // 
-            this.ColumnaPrecioUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnaPrecioUnitario.HeaderText = "PRECIO UNITARIO";
-            this.ColumnaPrecioUnitario.Name = "ColumnaPrecioUnitario";
-            this.ColumnaPrecioUnitario.ReadOnly = true;
-            this.ColumnaPrecioUnitario.Width = 116;
-            // 
-            // columnaValorTotal
-            // 
-            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
-            this.columnaValorTotal.Name = "columnaValorTotal";
-            this.columnaValorTotal.ReadOnly = true;
-            // 
             // ManoObra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,12 +267,12 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.tablaMateriales);
+            this.Controls.Add(this.tablaManoObra);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ManoObra";
             this.Text = "ManoObra";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaMateriales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaManoObra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -281,7 +283,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.DataGridView tablaMateriales;
+        public System.Windows.Forms.DataGridView tablaManoObra;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label6;

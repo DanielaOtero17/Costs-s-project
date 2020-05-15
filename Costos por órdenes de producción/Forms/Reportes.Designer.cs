@@ -35,9 +35,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
-            this.ClientSize = new System.Drawing.Size(736, 450);
+            this.ClientSize = new System.Drawing.Size(673, 478);
             this.Name = "Reportes";
             this.Text = "REPORTES E INFORMACIÓN";
+            this.Load += new System.EventHandler(this.Reportes_Load);
             this.ResumeLayout(false);
 
         }
