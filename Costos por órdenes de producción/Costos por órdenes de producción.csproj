@@ -126,11 +126,11 @@
     <Compile Include="Forms\RequisicionMateriales.Designer.cs">
       <DependentUpon>RequisicionMateriales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tasa.cs">
+    <Compile Include="Forms\Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tasa.Designer.cs">
-      <DependentUpon>Tasa.cs</DependentUpon>
+    <Compile Include="Forms\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +158,12 @@
     <EmbeddedResource Include="Forms\GestionOrden.resx">
       <DependentUpon>GestionOrden.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HojaCostos.resx">
+      <DependentUpon>HojaCostos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManoObra.resx">
+      <DependentUpon>ManoObra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modify.resx">
       <DependentUpon>Modify.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\registroTipo.resx">
       <DependentUpon>registroTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RequisicionMateriales.resx">
       <DependentUpon>RequisicionMateriales.cs</DependentUpon>
@@ -261,6 +270,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RequisicionTitle.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REPORTES.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mano de Obra_Title.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

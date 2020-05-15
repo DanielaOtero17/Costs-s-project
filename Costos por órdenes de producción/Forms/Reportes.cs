@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Costos_por_órdenes_de_producción.Forms
 {
-    public partial class Tasa : Form
+    public partial class Reportes : Form
     {
-        public Tasa()
+        public Reportes()
         {
             InitializeComponent();
         }

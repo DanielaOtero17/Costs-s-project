@@ -207,5 +207,10 @@ namespace Costos_por_órdenes_de_producción
         {
 
         }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -163,6 +163,16 @@ namespace Costos_por_órdenes_de_producción.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mano_de_Obra_Title {
+            get {
+                object obj = ResourceManager.GetObject("Mano de Obra_Title", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap modify {
             get {
                 object obj = ResourceManager.GetObject("modify", resourceCulture);
@@ -226,6 +236,16 @@ namespace Costos_por_órdenes_de_producción.Properties {
         internal static System.Drawing.Bitmap registrarOperarioTitle {
             get {
                 object obj = ResourceManager.GetObject("registrarOperarioTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REPORTES {
+            get {
+                object obj = ResourceManager.GetObject("REPORTES", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

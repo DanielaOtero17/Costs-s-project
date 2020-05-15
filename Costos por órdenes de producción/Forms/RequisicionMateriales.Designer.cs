@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tablaMateriales = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.columnaConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMateriales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -109,22 +109,40 @@
             this.columnaValorTotal});
             this.tablaMateriales.Location = new System.Drawing.Point(24, 184);
             this.tablaMateriales.Name = "tablaMateriales";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.tablaMateriales.Size = new System.Drawing.Size(625, 244);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaMateriales.Size = new System.Drawing.Size(625, 234);
             this.tablaMateriales.TabIndex = 33;
             this.tablaMateriales.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.TablaMateriales_CellBeginEdit);
             this.tablaMateriales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             this.tablaMateriales.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaMateriales_CellEndEdit);
             // 
-            // richTextBox1
+            // columnaConcepto
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(24, 108);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(461, 61);
-            this.richTextBox1.TabIndex = 34;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
+            this.columnaConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.columnaConcepto.HeaderText = "CONCEPTO";
+            this.columnaConcepto.Name = "columnaConcepto";
+            // 
+            // columnaCantidad
+            // 
+            this.columnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.columnaCantidad.HeaderText = "CANTIDAD";
+            this.columnaCantidad.Name = "columnaCantidad";
+            this.columnaCantidad.Width = 87;
+            // 
+            // ColumnaValorUnitario
+            // 
+            this.ColumnaValorUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnaValorUnitario.HeaderText = "VALOR UNITARIO";
+            this.ColumnaValorUnitario.Name = "ColumnaValorUnitario";
+            this.ColumnaValorUnitario.Width = 113;
+            // 
+            // columnaValorTotal
+            // 
+            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
+            this.columnaValorTotal.Name = "columnaValorTotal";
             // 
             // button2
             // 
@@ -152,7 +170,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(178, 435);
+            this.textBox2.Location = new System.Drawing.Point(175, 435);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(209, 30);
@@ -172,32 +190,14 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // columnaConcepto
+            // richTextBox1
             // 
-            this.columnaConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle7;
-            this.columnaConcepto.HeaderText = "CONCEPTO";
-            this.columnaConcepto.Name = "columnaConcepto";
-            // 
-            // columnaCantidad
-            // 
-            this.columnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnaCantidad.HeaderText = "CANTIDAD";
-            this.columnaCantidad.Name = "columnaCantidad";
-            this.columnaCantidad.Width = 87;
-            // 
-            // ColumnaValorUnitario
-            // 
-            this.ColumnaValorUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnaValorUnitario.HeaderText = "VALOR UNITARIO";
-            this.ColumnaValorUnitario.Name = "ColumnaValorUnitario";
-            this.ColumnaValorUnitario.Width = 113;
-            // 
-            // columnaValorTotal
-            // 
-            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
-            this.columnaValorTotal.Name = "columnaValorTotal";
+            this.richTextBox1.Location = new System.Drawing.Point(24, 108);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(461, 61);
+            this.richTextBox1.TabIndex = 34;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
             // 
             // RequisicionMateriales
             // 
@@ -231,7 +231,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label label6;
-        public System.Windows.Forms.RichTextBox richTextBox1;
         public System.Windows.Forms.DataGridView tablaMateriales;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -241,5 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaValorUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaValorTotal;
+        public System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

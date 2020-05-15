@@ -85,22 +85,8 @@ namespace Costos_por_órdenes_de_producción.Forms
                 precio_Total = cantidad * precio_Unitario;
                 tablaMateriales.Rows[e.RowIndex].Cells[3].Value = precio_Total;
             }
-            if (tablaMateriales.Columns[e.ColumnIndex].Name == "columnaCantidad")
-            {
-                try
-                {
-                    if (precio_Unitario != 0)
-                    {
-                        cantidad = int.Parse(tablaMateriales.Rows[e.RowIndex].Cells[1].Value.ToString());
-                        precio_Total = cantidad * precio_Unitario;
-                        tablaMateriales.Rows[e.RowIndex].Cells[3].Value = precio_Total;
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("La cantidad o el precio unitario ingresados no son permitidos.");
-                }
-            }
+           
+        
 
         }
 
@@ -125,15 +111,15 @@ namespace Costos_por_órdenes_de_producción.Forms
                         double.Parse(tablaMateriales.Rows[i].Cells[3].Value.ToString()));
 
                     materiales.Add(material);
+               
                 }
-
             }
             textBox2.Text = suma + "";
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            calcularTotal();
+            
             verif = 1;
 
             principal.registrarRequisicion(int.Parse(label6.Text),materiales);
@@ -150,7 +136,8 @@ namespace Costos_por_órdenes_de_producción.Forms
             else
             {
                 this.Hide();
-
+                Form1 principal = new Form1();
+                principal.Show();
             }
         }
     }

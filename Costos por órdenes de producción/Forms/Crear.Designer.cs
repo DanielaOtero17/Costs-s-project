@@ -51,11 +51,13 @@
             this.fechaPedido.CustomFormat = "DD/MM/AAAA";
             this.fechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaPedido.Location = new System.Drawing.Point(71, 218);
+            this.fechaPedido.Location = new System.Drawing.Point(47, 217);
+            this.fechaPedido.MaxDate = new System.DateTime(2020, 5, 15, 0, 0, 0, 0);
+            this.fechaPedido.MinDate = new System.DateTime(2020, 5, 15, 0, 0, 0, 0);
             this.fechaPedido.Name = "fechaPedido";
             this.fechaPedido.Size = new System.Drawing.Size(106, 26);
             this.fechaPedido.TabIndex = 3;
-            this.fechaPedido.Value = new System.DateTime(2020, 3, 25, 0, 0, 0, 0);
+            this.fechaPedido.Value = new System.DateTime(2020, 5, 15, 0, 0, 0, 0);
             this.fechaPedido.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // label1
@@ -63,11 +65,12 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 194);
+            this.label1.Location = new System.Drawing.Point(40, 194);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 21);
+            this.label1.Size = new System.Drawing.Size(123, 21);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Fecha";
+            this.label1.Text = "Fecha Creación";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // comboBox1
             // 

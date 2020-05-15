@@ -79,5 +79,10 @@ namespace Costos_por_órdenes_de_producción
             this.Visible = false;
             regis.Show();
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

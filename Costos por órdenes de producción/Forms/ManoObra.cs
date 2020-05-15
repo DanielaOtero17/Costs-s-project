@@ -16,5 +16,28 @@ namespace Costos_por_órdenes_de_producción.Forms
         {
             InitializeComponent();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for(int i=1;i<99999;i++)
+            comboBox2.Items.Add(i);
+
+           
+        }
     }
 }

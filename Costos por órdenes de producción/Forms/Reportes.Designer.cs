@@ -1,6 +1,6 @@
 ﻿namespace Costos_por_órdenes_de_producción.Forms
 {
-    partial class Tasa
+    partial class Reportes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Reportes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Tasa";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
+            this.ClientSize = new System.Drawing.Size(736, 450);
+            this.Name = "Reportes";
+            this.Text = "REPORTES E INFORMACIÓN";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
