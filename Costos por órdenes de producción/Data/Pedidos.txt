@@ -1,2 +1,19 @@
 0/7689/daniela/Ventilador/13/05/2020
 0/5678/daniela/Ventilador/14/05/2020
+3/6786/daniela/Mesas/14/05/2020
+4/987/Universidad Icesi/Ventilador/14/05/2020
+5/678/Juana Quintero/Ventilador/14/05/2020
+6/980/Juana Quintero/Mesas/14/05/2020
+7/897/Universidad Icesi/Espejo/25/03/2020
+8/657/Universidad Icesi/Mesas/03/03/2020
+9/56/daniela/Espejo/25/03/2020
+10/90/daniela/Mesas/14/05/2020
+11/21/Juana Quintero/Mesas/05/03/2020
+12/789/Universidad Icesi/Ventilador/14/05/2020
+13/192/daniela/Ventilador/14/05/2020
+14/67895/Juana Quintero/Ventilador/14/05/2020
+15/9817/Juana Quintero/Ventilador/14/05/2020
+16/345/Juana Quintero/Ventilador/12/03/2020
+17/67/daniela/Ventilador/25/03/2020
+18/8/daniela/Ventilador/14/05/2020
+19/654/daniela/Ventilador/25/03/2020

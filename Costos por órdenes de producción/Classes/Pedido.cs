@@ -19,6 +19,10 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         public DateTime fechaCreacion  { get;set; } 
 
+        public RequisicionMaterial requisicion { get; set; }
+
+        public double CIF_presupuestado { get; set; }
+
 
         public Pedido(int i, int cant, Cliente cli, Articulo art, DateTime fecha)
         {
@@ -27,6 +31,8 @@ namespace Costos_por_órdenes_de_producción.Classes
             fechaCreacion = fecha;
             articulo = art;
             cliente = cli;
+            requisicion = null;
+            CIF_presupuestado = 0;
         }
 
         public Boolean compareTo(String cliente, String entrada)

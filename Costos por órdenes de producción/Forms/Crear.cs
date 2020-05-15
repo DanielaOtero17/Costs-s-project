@@ -66,10 +66,17 @@ namespace Costos_por_órdenes_de_producción
             Classes.Cliente cli = principal.searchClient(darIdClienteEscogido());
             Classes.Articulo art = principal.searchArticle(darIdArticuloEscogido());
 
+            Classes.Pedido ped = new Classes.Pedido(int.Parse(label6.Text), int.Parse(textBox2.Text), cli, art, fecha);
+
             principal.registrarPedido(int.Parse(label6.Text), int.Parse(textBox2.Text), cli, art, fecha);
             MessageBox.Show(null," Continuemos con el formulario de Requisición.", "Registro satisfactorio");
             this.Hide();
+
+            
+
             Forms.RequisicionMateriales requisicion = new Forms.RequisicionMateriales();
+            requisicion.label6.Text = ped.numeroPedido + "";
+            requisicion.richTextBox1.Text = ped.articulo.name + ": " + ped.articulo.description + "";
             requisicion.Show();
         }
 
@@ -169,7 +176,7 @@ namespace Costos_por_órdenes_de_producción
         {
 
             //Llamado al método que carga los datos desde el archivo al comboBox
-            LoadData_Articulos();
+            principal.LoadData_Articulos();
 
 
             //añade los items al comboBox
@@ -179,34 +186,7 @@ namespace Costos_por_órdenes_de_producción
             }
         }
 
-        public void LoadData_Articulos()
-        {
-            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\articulos.txt";
-
-            if (File.Exists(path))
-            {
-                using (StreamReader sr = new StreamReader(path))
-                {
-                    Boolean verif = false;
-                    while (verif == false)
-                    {
-
-                        String tipocomp = sr.ReadLine();
-
-                        if (tipocomp == null)
-                        {
-                            verif = true;
-                        }
-                        else
-                        {
-                            String[] tipochar = tipocomp.Split('/');
-                           // MessageBox.Show(tipocomp);
-                            principal.articles.Add(new Classes.Articulo(tipochar[0], tipochar[1], int.Parse(tipochar[2])));
-                        }
-                    }
-                }
-            }
-        }
+       
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
