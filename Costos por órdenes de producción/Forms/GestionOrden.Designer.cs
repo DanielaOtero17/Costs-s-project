@@ -231,9 +231,9 @@
             this.checkedListBox1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
-            "Pendiente",
             "En Producción",
-            "Terminada"});
+            "Terminada",
+            "Vendida"});
             this.checkedListBox1.Location = new System.Drawing.Point(419, 361);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(137, 72);
