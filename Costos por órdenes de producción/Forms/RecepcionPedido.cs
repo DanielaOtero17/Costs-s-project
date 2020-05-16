@@ -31,5 +31,31 @@ namespace Costos_por_órdenes_de_producción.Forms
             Reportes reporte = new Reportes(pedidos);
             reporte.Show();
         }
+
+        private void HojaCostos_Btn_Click(object sender, EventArgs e)
+        {
+            
+            HojaCostos hoja = new HojaCostos(darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString())));
+            this.Close();
+            hoja.Show();
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public Classes.Pedido darPedidoSeleccionado(int numPedido)
+        {
+            for (int i = 0; i < pedidos.Count; i++)
+            {
+                if (numPedido == pedidos[i].numeroPedido)
+                {
+                    return pedidos[i];
+                }
+
+            }
+            return null;
+        }
     }
 }

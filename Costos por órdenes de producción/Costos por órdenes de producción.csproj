@@ -317,5 +317,11 @@
   <ItemGroup>
     <None Include="Resources\CHANGE_BTN.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PERIODO_REPORTE2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\INFO_PEDIDO1.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

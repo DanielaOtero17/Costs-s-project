@@ -190,6 +190,9 @@
   <data name="MANOBRA_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MANOBRA_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CHANGE_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHANGE_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SIGUIENTE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIGUIENTE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,6 +214,9 @@
   <data name="CIF_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CIF_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PERIODO_REPORTE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PERIODO_REPORTE2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Mano de Obra_Title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mano de Obra_Title.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,7 +226,7 @@
   <data name="PRODUCTOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PRODUCTOS.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CHANGE_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CHANGE_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="INFO_PEDIDO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\INFO_PEDIDO1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
