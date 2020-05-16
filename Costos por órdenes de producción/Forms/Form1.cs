@@ -14,11 +14,13 @@ namespace Costos_por_órdenes_de_producción
     {
         public Forms.RegistroOperario regis;
         private Classes.Principal principal;
+  
 
         public Form1()
         {
             InitializeComponent();
             regis = new Forms.RegistroOperario();
+            principal = new Classes.Principal();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -83,7 +85,7 @@ namespace Costos_por_órdenes_de_producción
         private void Button7_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Forms.Reportes reporte = new Forms.Reportes();
+            Forms.Reportes reporte = new Forms.Reportes(principal.cargarPedidos()) ;
             reporte.Show();
         }
     }

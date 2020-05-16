@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Costos_por_órdenes_de_producción.Classes
 {
-    class RequisicionMaterial
+    public class RequisicionMaterial
     {
     
         public List<Material> materiales { get; set; }

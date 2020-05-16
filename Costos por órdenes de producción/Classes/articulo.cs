@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Costos_por_órdenes_de_producción.Classes
 {
-    class Articulo
+   public class Articulo
     {
         public String name { get; set; }
         public String description { get; set; }

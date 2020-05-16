@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Costos_por_órdenes_de_producción.Classes
 {
-    class Principal
+    public class Principal
     {
         public List<Articulo> articles { get; set; }
         public List<int> codes { get; set; }
@@ -112,7 +112,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             }
             return null;
         }
-        public void cargarPedidos()
+        public List<Pedido> cargarPedidos()
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Pedidos.txt";
 
@@ -133,15 +133,16 @@ namespace Costos_por_órdenes_de_producción.Classes
                         {
                             String[] tipochar = tipocomp.Split('/');
 
-                           pedidos.Add(new Pedido(int.Parse(tipochar[0]), int.Parse(tipochar[1]),
-                                searchClient(tipochar[2]), searchArticle(tipochar[3]),
-                               new DateTime(int.Parse(tipochar[6]), int.Parse(tipochar[5]),
-                               int.Parse(tipochar[4]))));
+                            pedidos.Add(new Pedido(int.Parse(tipochar[0]), int.Parse(tipochar[1]),
+                                 searchClient(tipochar[2]), searchArticle(tipochar[3]),
+                                new DateTime(int.Parse(tipochar[6]), int.Parse(tipochar[5]),
+                                int.Parse(tipochar[4]))));
 
                         }
                     }
                 }
             }
+            return pedidos;
         }
 
         public void cargarTipoLabor()

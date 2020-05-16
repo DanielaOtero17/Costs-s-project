@@ -13,10 +13,13 @@ namespace Costos_por_órdenes_de_producción.Forms
     public partial class Reportes : Form
     {
         
-        public Reportes()
+        private List<Classes.Pedido> pedidos { get; set; }
+
+        public Reportes(List<Classes.Pedido> infoPedidos)
         {
             InitializeComponent();
-           
+            pedidos = infoPedidos;
+
         }
 
         private void Reportes_Load(object sender, EventArgs e)
@@ -34,7 +37,14 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            int numPedido = ;
+           
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            RecepcionPedido recepcion = new RecepcionPedido(pedidos);
+            recepcion.Show();
         }
     }
 }

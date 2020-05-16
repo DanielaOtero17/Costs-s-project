@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Costos_por_órdenes_de_producción.Classes
 {
-    class Cliente
+   public class Cliente
     {
         public static String PERSONA_NATURAL = "Persona Natural";
         public static String PERSONA_JURIDICA = "Persona Juridica";

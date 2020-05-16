@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Costos_por_órdenes_de_producción.Classes
 {
-    class Operario
+    public class Operario
     {
         public String name { get; set; }
         public TipoLabor tipo { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Costos_por_órdenes_de_producción.Classes
 {
-    class Pedido
+     public class Pedido
     {
         // Número de identificación del pedido
         public int numeroPedido { get; set; }

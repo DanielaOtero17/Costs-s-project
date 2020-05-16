@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Costos_por_órdenes_de_producción.Classes
 {
-    class ManoDeObra
+    public class ManoDeObra
     {
         public int numPedido { get; set; }
         public List<Operario> trabajadores { get; set; }
