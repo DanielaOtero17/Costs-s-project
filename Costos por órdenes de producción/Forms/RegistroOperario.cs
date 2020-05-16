@@ -118,6 +118,10 @@ namespace Costos_por_órdenes_de_producción.Forms
             {
                 MessageBox.Show("El formato de número no es válido.");
             }
+            else if (listaTipos.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de operario.");
+            }
             else
             {
                 principal.registrarOperario(textBox1.Text,textBox2.Text,darLaborEscogida());

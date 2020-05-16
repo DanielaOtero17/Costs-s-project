@@ -278,5 +278,14 @@
   <ItemGroup>
     <None Include="Resources\Mano de Obra_Title.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PERIODO_REPORTE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PERIODO_REPORTE1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\INFO_PEDIDO.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
