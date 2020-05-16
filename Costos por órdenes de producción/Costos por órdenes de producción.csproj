@@ -109,6 +109,12 @@
     <Compile Include="Forms\Orden.Designer.cs">
       <DependentUpon>Orden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RecepcionPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecepcionPedido.Designer.cs">
+      <DependentUpon>RecepcionPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RegistroOperario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orden.resx">
       <DependentUpon>Orden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecepcionPedido.resx">
+      <DependentUpon>RecepcionPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistroOperario.resx">
       <DependentUpon>RegistroOperario.cs</DependentUpon>
@@ -286,6 +295,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\INFO_PEDIDO.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BACK_BTN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HOJACOSTOS_BTN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MANOBRA_BTN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MATERIAPRIMA_BTN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CIF_BTN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HOJACOSTOS_BTN1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHANGE_BTN.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

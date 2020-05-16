@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="INFO_PEDIDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\INFO_PEDIDO.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HOME" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HOME.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="title_client" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\title_client.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ORDENES" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ORDENES.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gestionTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gestionTitle.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,11 +133,20 @@
   <data name="OPERARIOS_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OPERARIOS_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DATA1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DATA1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BACK_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BACK_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancelarButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelarButton.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CREAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CREAR.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MATERIAPRIMA_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MATERIAPRIMA_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Title_Busqueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Title_Busqueda.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +157,11 @@
   <data name="BIENVENIDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BIENVENIDO.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DATA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DATA.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="registrarOperarioTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\registrarOperarioTitle.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HOJACOSTOS_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HOJACOSTOS_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NUEVO_PED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NUEVO_PED.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,17 +178,23 @@
   <data name="modify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modify.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HOJACOSTOS_BTN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HOJACOSTOS_BTN1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TITLE_REGISTER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TITLE_REGISTER.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RequisicionTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RequisicionTitle.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MANOBRA_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MANOBRA_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SIGUIENTE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIGUIENTE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DATA1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DATA1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ORDENES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ORDENES.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PERIODO_REPORTE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PERIODO_REPORTE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,22 +202,25 @@
   <data name="PERIODO_REPORTE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PERIODO_REPORTE1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DATA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DATA.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="guardarButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guardarButton.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CLIENTES.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CIF_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CIF_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mano de Obra_Title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mano de Obra_Title.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="registrarOperarioTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\registrarOperarioTitle.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CLIENTES.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PRODUCTOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PRODUCTOS.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="INFO_PEDIDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\INFO_PEDIDO.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CHANGE_BTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHANGE_BTN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

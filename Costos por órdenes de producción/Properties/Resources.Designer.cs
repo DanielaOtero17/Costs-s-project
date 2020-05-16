@@ -63,6 +63,16 @@ namespace Costos_por_órdenes_de_producción.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BACK_BTN {
+            get {
+                object obj = ResourceManager.GetObject("BACK_BTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BIENVENIDO {
             get {
                 object obj = ResourceManager.GetObject("BIENVENIDO", resourceCulture);
@@ -86,6 +96,26 @@ namespace Costos_por_órdenes_de_producción.Properties {
         internal static System.Drawing.Bitmap cancelarButton {
             get {
                 object obj = ResourceManager.GetObject("cancelarButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CHANGE_BTN {
+            get {
+                object obj = ResourceManager.GetObject("CHANGE_BTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CIF_BTN {
+            get {
+                object obj = ResourceManager.GetObject("CIF_BTN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +183,26 @@ namespace Costos_por_órdenes_de_producción.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HOJACOSTOS_BTN {
+            get {
+                object obj = ResourceManager.GetObject("HOJACOSTOS_BTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HOJACOSTOS_BTN1 {
+            get {
+                object obj = ResourceManager.GetObject("HOJACOSTOS_BTN1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HOME {
             get {
                 object obj = ResourceManager.GetObject("HOME", resourceCulture);
@@ -176,6 +226,26 @@ namespace Costos_por_órdenes_de_producción.Properties {
         internal static System.Drawing.Bitmap Mano_de_Obra_Title {
             get {
                 object obj = ResourceManager.GetObject("Mano de Obra_Title", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MANOBRA_BTN {
+            get {
+                object obj = ResourceManager.GetObject("MANOBRA_BTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MATERIAPRIMA_BTN {
+            get {
+                object obj = ResourceManager.GetObject("MATERIAPRIMA_BTN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

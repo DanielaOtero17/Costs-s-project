@@ -195,7 +195,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             return null;
         }
 
-        public void cargarOperarios()
+        public List<Operario> cargarOperarios()
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Operarios.txt";
 
@@ -224,6 +224,7 @@ namespace Costos_por_órdenes_de_producción.Classes
                     }
                 }
             }
+            return workers;
         }
 
         public void cargarManos_de_Obra() //FALTA COMPLETAR ESTE MÉTODO
