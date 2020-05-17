@@ -21,20 +21,25 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         ManoObra mano_De_Obra { get; set; }
 
+        Classes.Pedido pedidoSeleccionado { get; set; }
+
         public RecepcionPedido(List<Classes.Pedido> listaPedidos)
         {
             principal = new Classes.Principal();
             InitializeComponent();
             pedidos = listaPedidos;
-            cargarPedidos_comboBox();
             principal.LoadData_Articulos();
             principal.cargarMateriales();
             principal.cargarTipoLabor();
             principal.cargarOperarios();
             principal.cargarManos_de_Obra();
+            principal.cargarPedidos();
+            principal.cargarCIF();
+            cargarPedidos_comboBox();
             requisicion = new Forms.RequisicionMateriales(this);
             hoja = null;
             mano_De_Obra = new ManoObra(this);
+            pedidoSeleccionado = null;
         }
 
         private void RecepcionPedido_Load(object sender, EventArgs e)
@@ -80,7 +85,7 @@ namespace Costos_por_órdenes_de_producción.Forms
         {
 
 
-            hoja = new HojaCostos(darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString())), this);
+            hoja = new HojaCostos(pedidoSeleccionado, this);
             this.Visible = false;
 
             cargarHojaCostosRequisicion();
@@ -89,17 +94,31 @@ namespace Costos_por_órdenes_de_producción.Forms
             hoja.calcularHorasTrabajadas();
             hoja.calcularTotalMO();
 
+            Classes.CIF cif = darCifEscogido();
+            hoja.cargarTablaCIF(cif.cif_presupuestado,cif.horas_presupuestadas);
             hoja.cargarTotalHojaCostos();
 
             hoja.Show();
 
+        }
 
+        public Classes.CIF darCifEscogido()
+        {
+            for(int i = 0; i < principal.cifs.Count; i++)
+            {
+                if(principal.cifs[i].numeroPedido == pedidoSeleccionado.numeroPedido)
+                {
+                    return principal.cifs[i];
+                }
+            }
+            return null;
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
-            textBox2.Text = ped.estado;
+            pedidoSeleccionado = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+
+            textBox2.Text = pedidoSeleccionado.estado;
 
         }
 
@@ -188,6 +207,11 @@ namespace Costos_por_órdenes_de_producción.Forms
                 MessageBox.Show("No hay trabajadores");
             }
         }
+
+        public void cargarDatosCIF()
+        {
+
+        }
         public void cargarDatosRequisicion(Classes.Pedido ped)
         {
             requisicion.tablaMateriales.Rows.Clear();
@@ -220,30 +244,28 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         public Classes.Pedido asignarTrabajadoresAPedido()
         {
-            Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+           
 
             for (int i = 0; i < principal.manos_de_obra.Count; i++)
             {
-                if (principal.manos_de_obra[i].numPedido == ped.numeroPedido)
+                if (principal.manos_de_obra[i].numPedido == pedidoSeleccionado.numeroPedido)
                 {
-                    ped.trabajadores = principal.manos_de_obra[i];
+                    pedidoSeleccionado.trabajadores = principal.manos_de_obra[i];
                 }
             }
-            return ped;
+            return pedidoSeleccionado;
         }
 
         public Classes.Pedido asignarMaterialesAPedido()
         {
-            Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
-
-            for (int i = 0; i < principal.requisiciones.Count; i++)
+             for (int i = 0; i < principal.requisiciones.Count; i++)
             {
-                if (principal.requisiciones[i].numero_pedido == ped.numeroPedido)
+                if (principal.requisiciones[i].numero_pedido == pedidoSeleccionado.numeroPedido)
                 {
-                    ped.requisicion = principal.requisiciones[i];
+                    pedidoSeleccionado.requisicion = principal.requisiciones[i];
                 }
             }
-            return ped;
+            return pedidoSeleccionado;
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
@@ -271,8 +293,20 @@ namespace Costos_por_órdenes_de_producción.Forms
         {
             CostosIndirectos CIF = new CostosIndirectos(this);
 
-            this.Hide();
-            CIF.Show();
+            try
+            {
+                CIF.textBox2.Text = comboBox1.SelectedItem.ToString();
+                Classes.Pedido ped = principal.searchPedido(int.Parse(comboBox1.SelectedItem.ToString()));
+
+                this.Hide();
+                CIF.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Debe seleccionar un número de pedido", "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+            }
+            
+            
         }
     }
 }

@@ -16,6 +16,8 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         public RecepcionPedido recepcion { get; set; }
 
+        public double totalHorasTrabajadas { get; set; }
+
         public HojaCostos(Classes.Pedido elPedido,RecepcionPedido ventanaAntes)
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace Costos_por_órdenes_de_producción.Forms
             textBox2.Text = pedido.numeroPedido + "";
             
             recepcion = ventanaAntes;
+            totalHorasTrabajadas = 0;
             
         }
 
@@ -54,33 +57,48 @@ namespace Costos_por_órdenes_de_producción.Forms
             
             double materiales = double.Parse(totalMD.Text);
             double manoDeObra = double.Parse(totalMO.Text);
-
-           double cif = darTasa() * calcularHorasTrabajadas();
+            double cif = double.Parse(totalCIF.Text);
+                
             double total = materiales + manoDeObra + cif;
             costoTotal.Text = total + "";
         }
 
         public double calcularHorasTrabajadas()
         {
-            double totalHoras = 0;
+           
            for(int i=0;i< tablaManoObra.Rows.Count-1; i++)
             {
-                totalHoras += double.Parse(tablaManoObra.Rows[i].Cells[1].Value.ToString());
+                totalHorasTrabajadas += double.Parse(tablaManoObra.Rows[i].Cells[1].Value.ToString());
             }
-            tablaCIF.Rows[0].Cells[3].Value = totalHoras;
-            return totalHoras;
+            tablaCIF.Rows[0].Cells[3].Value = totalHorasTrabajadas;
+            return totalHorasTrabajadas;
         }
 
-        public double darTasa()
+        public double darTasa(double cifp, int horasp)
         {
-            double cifP = pedido.CIF_presupuestado;
-            double horasP = pedido.Horas_presupuestadas;
-            double tasa = 0;
-            if (cifP > 0 && horasP > 0)
+            if (horasp != 0)
             {
-                tasa = cifP/horasP;
-            }
-            return tasa;
+                double tasa = cifp / horasp;
+
+                return tasa;
+            }            
+            return 0.1;
+
+        }
+
+        public void cargarTablaCIF(double presupuesto, int horasPresupuestadas)
+        {
+
+            double cifTASA = darTasa(presupuesto, horasPresupuestadas);
+
+            tablaCIF.Rows[0].Cells[0].Value = presupuesto;
+            tablaCIF.Rows[0].Cells[1].Value = horasPresupuestadas;
+            tablaCIF.Rows[0].Cells[2].Value = cifTASA;
+            tablaCIF.Rows[0].Cells[3].Value = totalHorasTrabajadas;
+
+            double TOTAL = cifTASA * totalHorasTrabajadas;
+            totalCIF.Text = TOTAL+ "";
+
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)

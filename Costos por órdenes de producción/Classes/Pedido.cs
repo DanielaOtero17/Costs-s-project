@@ -28,8 +28,9 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         public ManoDeObra trabajadores { get; set; }
 
+        public CIF cif { get; set; }
         public String estado { get; set; }
-        public double Horas_presupuestadas { get; set; }
+        public int Horas_presupuestadas { get; set; }
 
 
         public Pedido(int i, int cant, String cli, String art, DateTime fecha)
@@ -42,6 +43,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             requisicion = null;
             CIF_presupuestado = 0;
             trabajadores = null;
+            cif = null;
             estado = ESTADO_EN_PROCESO;
             Horas_presupuestadas = 0;
         }

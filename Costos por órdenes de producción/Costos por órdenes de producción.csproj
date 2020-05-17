@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Articulo.cs" />
+    <Compile Include="Classes\CIF.cs" />
     <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\ManoDeObra.cs" />
     <Compile Include="Classes\Material.cs" />

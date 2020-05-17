@@ -21,6 +21,7 @@ namespace Costos_por_órdenes_de_producción.Classes
         public List<RequisicionMaterial> requisiciones { get; set; }
         public List<ManoDeObra> manos_de_obra { get; set; }
 
+        public List<CIF> cifs { get; set; }
         public Principal()
         {
             articles = new List<Articulo>();
@@ -31,6 +32,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             pedidos = new List<Pedido>();
             requisiciones = new List<RequisicionMaterial>();
             manos_de_obra = new List<ManoDeObra>();
+            cifs = new List<CIF>();
         }
 
         public void productRegister(String name, String desc, int code)
@@ -249,7 +251,19 @@ namespace Costos_por_órdenes_de_producción.Classes
             }
             return null;
         }
+        
+        public void registrarCIF(int numPed, double cifpre, int horasp)
+        {
+            CIF nuevo = new CIF(numPed, cifpre,horasp);
+            cifs.Add(nuevo);
 
+           int index =  pedidos.IndexOf(searchPedido(numPed));
+
+            pedidos[index].CIF_presupuestado = cifpre;
+            pedidos[index].Horas_presupuestadas = horasp;
+
+            addDataCIF(nuevo);
+        }
         public List<Operario> cargarOperarios()
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Operarios.txt";
@@ -282,7 +296,41 @@ namespace Costos_por_órdenes_de_producción.Classes
             return workers;
         }
 
-        public void cargarManos_de_Obra() //FALTA COMPLETAR ESTE MÉTODO
+        public void cargarCIF()
+        {
+            
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\CIF.txt";
+
+            if (File.Exists(path))
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    Boolean verif = false;
+                    while (verif == false)
+                    {
+
+                        String tipocomp = sr.ReadLine();
+
+                        if (tipocomp == null)
+                        {
+                            verif = true;
+                        }
+                        else
+                        {
+                            String[] tipochar = tipocomp.Split('/');
+
+                            CIF cifAUX = new CIF(int.Parse(tipochar[0]),double.Parse(tipochar[1]), int.Parse(tipochar[2]));
+                            cifs.Add(cifAUX);
+                            int index = pedidos.IndexOf(searchPedido(cifAUX.numeroPedido));
+                            
+                            pedidos[index].CIF_presupuestado = cifAUX.cif_presupuestado;
+                            pedidos[index].Horas_presupuestadas = cifAUX.numeroPedido;
+                        }
+                    }
+                }
+            }
+        }
+        public void cargarManos_de_Obra() 
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Mano de Obra.txt";
 
@@ -376,8 +424,6 @@ namespace Costos_por_órdenes_de_producción.Classes
             MO.totalValue = TotalMO;
             addDataMOD(MO);
 
-
-
         }
 
         public void addDataMOD(ManoDeObra manoDeObra)
@@ -431,6 +477,23 @@ namespace Costos_por_órdenes_de_producción.Classes
             addDataWorkers(worker);
         }
 
+        public void addDataCIF(CIF cif)
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\CIF.txt";
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine(cif.numeroPedido + "/" + cif.cif_presupuestado + "/" + cif.horas_presupuestadas);
+                }
+            }else{
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine(cif.numeroPedido + "/" + cif.cif_presupuestado + "/" + cif.horas_presupuestadas);
+                }
+            }
+        }
         public void addDataPedido(Pedido ped)
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Pedidos.txt";
