@@ -153,6 +153,9 @@
     <Compile Include="Forms\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CostosIndirectos.resx">
+      <DependentUpon>CostosIndirectos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CrearPedido.resx">
       <DependentUpon>CrearPedido.cs</DependentUpon>
     </EmbeddedResource>

@@ -69,9 +69,10 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         }
 
-        public void registrarRequisicion(int numPedido, List<Material> materiales)
+        public void registrarRequisicion(int numPedido, List<Material> materiales,double totalRequi)
         {
             RequisicionMaterial requisicion = new RequisicionMaterial(numPedido, materiales);
+            requisicion.totalRequisicion = totalRequi;
 
             Pedido aux = searchPedido(numPedido);
 
@@ -173,7 +174,7 @@ namespace Costos_por_órdenes_de_producción.Classes
                                 List<Material> materials = new List<Material>();
 
                             
-                                for (int i = 0; i < materiales.Length; i++)
+                                for (int i = 0; i < materiales.Length-1; i++)
                                 {
                                     String[] material_aux = materiales[i].Split('-');
 
@@ -213,21 +214,25 @@ namespace Costos_por_órdenes_de_producción.Classes
                         {
                             String[] tipochar = tipocomp.Split('/');
 
-                            TipoLabor aux = buscarTipoLabor(tipochar[1]);
+                          //  TipoLabor aux = buscarTipoLabor(tipochar[1]);
 
                             worktypes.Add(new TipoLabor(tipochar[0],double.Parse(tipochar[1])));
+                            
                         }
                     }
                 }
             }
-        }//FALTA COMPLETAR ESTE MÉTODO
+        }
 
         public TipoLabor buscarTipoLabor(String name)
         {
             for(int i = 0; i < worktypes.Count; i++){
 
                 if (worktypes[i].name.Equals(name))
+                {
                     return worktypes[i];
+                }
+                  
             }
             return null;
         }
@@ -236,9 +241,11 @@ namespace Costos_por_órdenes_de_producción.Classes
         {
             for (int i = 0; i < workers.Count; i++)
             {
+                if (workers[i].name.Equals(name))
+                {
 
-                if (worktypes[i].name.Equals(name))
                     return workers[i];
+                }
             }
             return null;
         }
@@ -266,7 +273,7 @@ namespace Costos_por_órdenes_de_producción.Classes
 
                             TipoLabor aux = buscarTipoLabor(tipochar[2]);
 
-                            workers.Add(new Operario(tipochar[0], tipochar[1], aux));
+                            workers.Add(new Operario(tipochar[0], tipochar[1], tipochar[2]));
 
                         }
                     }
@@ -279,6 +286,7 @@ namespace Costos_por_órdenes_de_producción.Classes
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Mano de Obra.txt";
 
+
             if (File.Exists(path))
             {
                 using (StreamReader sr = new StreamReader(path))
@@ -286,26 +294,45 @@ namespace Costos_por_órdenes_de_producción.Classes
                     Boolean verif = false;
                     while (verif == false)
                     {
-                        String tipocomp = sr.ReadLine();
+                        String line1 = sr.ReadLine();
+                        String line2 = sr.ReadLine();
 
-                        if (tipocomp == null)
+
+                        if (line1 == null)
                         {
                             verif = true;
                         }
                         else
                         {
-                            String[] tipochar = tipocomp.Split('/');
+                            String[] id_total = line1.Split('/');
+                            String[] operarios = line2.Split('/');
+                            List<Operario> manoOD = new List<Operario>();
 
-                            TipoLabor aux = buscarTipoLabor(tipochar[2]);
 
+                            for (int i = 0; i < operarios.Length - 1; i++)
+                            {
+                                String[] operarios_aux = operarios[i].Split('-');
 
-                            //FALTA COMPLETAR
-                            manos_de_obra.Add(new ManoDeObra(int.Parse(tipochar[0]), null));
+                                Operario auxiliar = buscarOperario(operarios_aux[0]);
 
+                                Operario op = new Operario(operarios_aux[0], auxiliar.id, auxiliar.tipo);
+
+                                op.horasTrabajadas = int.Parse(operarios_aux[1]);
+                                op.valorUnitario = double.Parse(operarios_aux[2]);
+                                op.totalValue = double.Parse(operarios_aux[3]);
+                                
+                               manoOD.Add(op);
+
+                            }
+                            ManoDeObra MOD = new ManoDeObra(int.Parse(id_total[0]), manoOD);
+                            MOD.totalValue = double.Parse(id_total[1]);
+                            
+                            manos_de_obra.Add(MOD);
                         }
                     }
                 }
             }
+
         }
         public void LoadData_Articulos()
         {
@@ -343,7 +370,61 @@ namespace Costos_por_órdenes_de_producción.Classes
             addDataTypes(tipo);
         }
 
-        public void registrarOperario(String name, String id, TipoLabor tipo)
+        public void registrarManoObra(int numPed, List<Operario> operarios,double TotalMO)
+        {
+            ManoDeObra MO = new ManoDeObra(numPed,operarios);
+            MO.totalValue = TotalMO;
+            addDataMOD(MO);
+
+
+
+        }
+
+        public void addDataMOD(ManoDeObra manoDeObra)
+        {
+            string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Mano de Obra.txt";
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    String info = "";
+                    for (int i = 0; i < manoDeObra.trabajadores.Count; i++)
+                    {
+                        TipoLabor aux = buscarTipoLabor(manoDeObra.trabajadores[i].tipo);
+                        double total = aux.valuePerhour * manoDeObra.trabajadores[i].horasTrabajadas;
+                        info += manoDeObra.trabajadores[i].name + "-" +
+                            manoDeObra.trabajadores[i].horasTrabajadas + "-" + manoDeObra.trabajadores[i].valorUnitario +
+                            "-" + manoDeObra.trabajadores[i].totalValue + "/";
+                    }
+                    sw.WriteLine(manoDeObra.numPedido + "/" + manoDeObra.totalValue);
+
+                    sw.WriteLine(info);
+
+
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    String info = "";
+                    for (int i = 0; i < manoDeObra.trabajadores.Count; i++)
+                    {
+                        TipoLabor aux = buscarTipoLabor(manoDeObra.trabajadores[i].tipo);
+                        double total = aux.valuePerhour * manoDeObra.trabajadores[i].horasTrabajadas;
+                        info += manoDeObra.trabajadores[i].name + "-" +
+                            manoDeObra.trabajadores[i].horasTrabajadas + "-" + manoDeObra.trabajadores[i].valorUnitario +
+                            "-" + manoDeObra.trabajadores[i].totalValue + "/";
+                    }
+                    sw.WriteLine(manoDeObra.numPedido + "/" + manoDeObra.totalValue);
+
+                    sw.WriteLine(info);
+
+                }
+            }
+        }
+        public void registrarOperario(String name, String id, String tipo)
         {
             Operario worker = new Operario(name,id,tipo);
             workers.Add(worker);
@@ -491,14 +572,14 @@ namespace Costos_por_órdenes_de_producción.Classes
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine(operario.name + "/" + operario.id + "/" + operario.tipo.name);
+                    sw.WriteLine(operario.name + "/" + operario.id + "/" + operario.tipo);
                 }
             }
             else
             {
                 using (StreamWriter sw = File.AppendText(path))
                 {
-                    sw.WriteLine(operario.name + "/" + operario.id + "/" + operario.tipo.name);
+                    sw.WriteLine(operario.name + "/" + operario.id + "/" + operario.tipo);
                 }
             }
         }

@@ -24,8 +24,6 @@ namespace Costos_por_órdenes_de_producción.Forms
             
             recepcion = ventanaAntes;
             
-            
-            
         }
 
         public void calcularTotalMD()
@@ -35,18 +33,29 @@ namespace Costos_por_órdenes_de_producción.Forms
             {
                 total += double.Parse(tablaMateriales.Rows[i].Cells[3].Value.ToString());
             }
-            MessageBox.Show(total + "");
+          
            totalMD.Text = total+"";
 
+        }
+
+        public void calcularTotalMO()
+        {
+            double total = 0;
+            for (int i = 0; i < tablaManoObra.Rows.Count - 1; i++)
+            {
+                total += double.Parse(tablaManoObra.Rows[i].Cells[3].Value.ToString());
+            }
+            
+            totalMO.Text = total + "";
         }
         
         public void cargarTotalHojaCostos()
         {
-            double cif = 0;
+            
             double materiales = double.Parse(totalMD.Text);
             double manoDeObra = double.Parse(totalMO.Text);
 
-            cif = darTasa() * calcularHorasTrabajadas();
+           double cif = darTasa() * calcularHorasTrabajadas();
             double total = materiales + manoDeObra + cif;
             costoTotal.Text = total + "";
         }
@@ -58,7 +67,7 @@ namespace Costos_por_órdenes_de_producción.Forms
             {
                 totalHoras += double.Parse(tablaManoObra.Rows[i].Cells[1].Value.ToString());
             }
-
+            tablaCIF.Rows[0].Cells[3].Value = totalHoras;
             return totalHoras;
         }
 

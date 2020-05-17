@@ -42,7 +42,7 @@ namespace Costos_por_órdenes_de_producción.Forms
             for (int i = 0; i < principal.worktypes.Count; i++)
             {
                 listaTipos.Items.Add(principal.worktypes[i].name + 
-                    " - " + principal.worktypes[i].valuePerhour);
+                    "-" + principal.worktypes[i].valuePerhour);
             }   
         }
 
@@ -124,7 +124,8 @@ namespace Costos_por_órdenes_de_producción.Forms
             }
             else
             {
-                principal.registrarOperario(textBox1.Text,textBox2.Text,darLaborEscogida());
+                String nombre = listaTipos.SelectedItem.ToString();
+                principal.registrarOperario(textBox1.Text,textBox2.Text,nombre);
                 MessageBox.Show("Se ha registrado correctamente el operario " + textBox1.Text);
                 clean();   
             }

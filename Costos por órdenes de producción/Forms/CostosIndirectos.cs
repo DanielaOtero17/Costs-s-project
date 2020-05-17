@@ -12,9 +12,17 @@ namespace Costos_por_órdenes_de_producción.Forms
 {
     public partial class CostosIndirectos : Form
     {
-        public CostosIndirectos()
+
+        public  RecepcionPedido recepcion {get;set;}
+        public CostosIndirectos(RecepcionPedido recep)
         {
             InitializeComponent();
+            recepcion = recep;
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

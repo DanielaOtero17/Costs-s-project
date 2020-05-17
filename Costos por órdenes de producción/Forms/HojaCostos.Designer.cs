@@ -39,23 +39,23 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tablaMateriales = new System.Windows.Forms.DataGridView();
-            this.columnaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.totalMD = new System.Windows.Forms.TextBox();
             this.tablaManoObra = new System.Windows.Forms.DataGridView();
             this.columnaOperario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.totalMD = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.totalMO = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tablaCIF = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaMateriales)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaManoObra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCIF)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
@@ -144,19 +144,14 @@
             this.tablaMateriales.TabIndex = 39;
             this.tablaMateriales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaMateriales_CellContentClick);
             // 
-            // columnaValorTotal
+            // columnaConcepto
             // 
-            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
-            this.columnaValorTotal.Name = "columnaValorTotal";
-            this.columnaValorTotal.ReadOnly = true;
-            // 
-            // ColumnaValorUnitario
-            // 
-            this.ColumnaValorUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnaValorUnitario.HeaderText = "VALOR UNITARIO";
-            this.ColumnaValorUnitario.Name = "ColumnaValorUnitario";
-            this.ColumnaValorUnitario.ReadOnly = true;
-            this.ColumnaValorUnitario.Width = 113;
+            this.columnaConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.columnaConcepto.HeaderText = "CONCEPTO";
+            this.columnaConcepto.Name = "columnaConcepto";
+            this.columnaConcepto.ReadOnly = true;
             // 
             // columnaCantidad
             // 
@@ -166,14 +161,19 @@
             this.columnaCantidad.ReadOnly = true;
             this.columnaCantidad.Width = 87;
             // 
-            // columnaConcepto
+            // ColumnaValorUnitario
             // 
-            this.columnaConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.columnaConcepto.HeaderText = "CONCEPTO";
-            this.columnaConcepto.Name = "columnaConcepto";
-            this.columnaConcepto.ReadOnly = true;
+            this.ColumnaValorUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnaValorUnitario.HeaderText = "VALOR UNITARIO";
+            this.ColumnaValorUnitario.Name = "ColumnaValorUnitario";
+            this.ColumnaValorUnitario.ReadOnly = true;
+            this.ColumnaValorUnitario.Width = 113;
+            // 
+            // columnaValorTotal
+            // 
+            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
+            this.columnaValorTotal.Name = "columnaValorTotal";
+            this.columnaValorTotal.ReadOnly = true;
             // 
             // textBox4
             // 
@@ -203,7 +203,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.totalMO);
             this.flowLayoutPanel1.Controls.Add(this.textBox3);
-            this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
+            this.flowLayoutPanel1.Controls.Add(this.tablaCIF);
             this.flowLayoutPanel1.Controls.Add(this.label4);
             this.flowLayoutPanel1.Controls.Add(this.totalCIF);
             this.flowLayoutPanel1.Controls.Add(this.label5);
@@ -226,6 +226,32 @@
             this.textBox2.Size = new System.Drawing.Size(127, 31);
             this.textBox2.TabIndex = 40;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(280, 336);
+            this.label1.Margin = new System.Windows.Forms.Padding(280, 12, 3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 21);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Total Materiales";
+            // 
+            // totalMD
+            // 
+            this.totalMD.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.totalMD.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalMD.Location = new System.Drawing.Point(420, 336);
+            this.totalMD.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.totalMD.Name = "totalMD";
+            this.totalMD.ReadOnly = true;
+            this.totalMD.Size = new System.Drawing.Size(127, 27);
+            this.totalMD.TabIndex = 43;
+            this.totalMD.Text = "0";
+            this.totalMD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.totalMD.TextChanged += new System.EventHandler(this.TotalMD_TextChanged);
             // 
             // tablaManoObra
             // 
@@ -276,32 +302,6 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(280, 336);
-            this.label1.Margin = new System.Windows.Forms.Padding(280, 12, 3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 21);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Total Materiales";
-            // 
-            // totalMD
-            // 
-            this.totalMD.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.totalMD.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalMD.Location = new System.Drawing.Point(420, 336);
-            this.totalMD.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
-            this.totalMD.Name = "totalMD";
-            this.totalMD.ReadOnly = true;
-            this.totalMD.Size = new System.Drawing.Size(127, 27);
-            this.totalMD.TabIndex = 43;
-            this.totalMD.Text = "0";
-            this.totalMD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.totalMD.TextChanged += new System.EventHandler(this.TotalMD_TextChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -328,24 +328,24 @@
             this.totalMO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.totalMO.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
-            // dataGridView1
+            // tablaCIF
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.OldLace;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tablaCIF.BackgroundColor = System.Drawing.Color.OldLace;
+            this.tablaCIF.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablaCIF.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.tablaCIF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaCIF.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.HorasTrabajadas});
-            this.dataGridView1.Location = new System.Drawing.Point(40, 714);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
-            this.dataGridView1.Name = "dataGridView1";
+            this.tablaCIF.Location = new System.Drawing.Point(40, 714);
+            this.tablaCIF.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.tablaCIF.Name = "tablaCIF";
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Size = new System.Drawing.Size(720, 59);
-            this.dataGridView1.TabIndex = 46;
+            this.tablaCIF.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.tablaCIF.Size = new System.Drawing.Size(720, 70);
+            this.tablaCIF.TabIndex = 46;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -378,7 +378,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(180, 788);
+            this.label4.Location = new System.Drawing.Point(180, 799);
             this.label4.Margin = new System.Windows.Forms.Padding(180, 12, 3, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(307, 21);
@@ -389,7 +389,7 @@
             // 
             this.totalCIF.BackColor = System.Drawing.Color.WhiteSmoke;
             this.totalCIF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalCIF.Location = new System.Drawing.Point(493, 788);
+            this.totalCIF.Location = new System.Drawing.Point(493, 799);
             this.totalCIF.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.totalCIF.Name = "totalCIF";
             this.totalCIF.ReadOnly = true;
@@ -403,7 +403,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(40, 830);
+            this.label5.Location = new System.Drawing.Point(40, 841);
             this.label5.Margin = new System.Windows.Forms.Padding(40, 12, 3, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(329, 28);
@@ -414,7 +414,7 @@
             // 
             this.costoTotal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.costoTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costoTotal.Location = new System.Drawing.Point(375, 830);
+            this.costoTotal.Location = new System.Drawing.Point(375, 841);
             this.costoTotal.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.costoTotal.Name = "costoTotal";
             this.costoTotal.ReadOnly = true;
@@ -436,7 +436,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaManoObra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCIF)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,7 +463,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox totalMO;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView tablaCIF;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;

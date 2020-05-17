@@ -15,12 +15,14 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         public double totalHoras { get; set; }
 
+
         public ManoDeObra(int numeroPedido,List<Operario> operarios) 
         {
             numPedido = numeroPedido;
             trabajadores = operarios;
             totalValue = 0;
             totalHoras = 0;
+            
         }
     }
 

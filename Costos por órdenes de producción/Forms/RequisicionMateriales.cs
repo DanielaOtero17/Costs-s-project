@@ -13,8 +13,8 @@ namespace Costos_por_órdenes_de_producción.Forms
     public partial class RequisicionMateriales : Form
     {
         int cantidad = 0;
-        decimal precio_Unitario = 0;
-        decimal precio_Total = 0;
+        double precio_Unitario = 0;
+        double precio_Total = 0;
         public List<Classes.Material> materiales { get; set; }
         Classes.Principal principal { get; set; }
 
@@ -78,7 +78,7 @@ namespace Costos_por_órdenes_de_producción.Forms
                 }
                 try
                 {
-                    precio_Unitario = decimal.Parse(tablaMateriales.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    precio_Unitario = double.Parse(tablaMateriales.Rows[e.RowIndex].Cells[2].Value.ToString());
                 }
                 catch
                 {
@@ -98,15 +98,15 @@ namespace Costos_por_órdenes_de_producción.Forms
             calcularTotal();
         }
 
-        private decimal calcularTotal()
+        private double calcularTotal()
         {
-            decimal suma = 0;
+            double suma = 0;
 
             for (int i = 0; i < tablaMateriales.RowCount; i++)
             {
                 if (tablaMateriales.Rows[i].Cells[3].Value != null)
                 {
-                    suma += decimal.Parse(tablaMateriales.Rows[i].Cells[3].Value.ToString());
+                    suma += double.Parse(tablaMateriales.Rows[i].Cells[3].Value.ToString());
 
                     Classes.Material material = new Classes.Material(tablaMateriales.Rows[i].Cells[0].Value.ToString(),
                         int.Parse(tablaMateriales.Rows[i].Cells[1].Value.ToString()),
@@ -118,6 +118,7 @@ namespace Costos_por_órdenes_de_producción.Forms
                 }
             }
             textBox2.Text = suma + "";
+            precio_Total = suma;
             return suma;
         }
 
@@ -126,7 +127,7 @@ namespace Costos_por_órdenes_de_producción.Forms
             
             verif = 1;
 
-            principal.registrarRequisicion(int.Parse(label6.Text),materiales);
+            principal.registrarRequisicion(int.Parse(label6.Text),materiales,precio_Total);
             MessageBox.Show("La requisición se ha registrado con éxito.");
 
         }
