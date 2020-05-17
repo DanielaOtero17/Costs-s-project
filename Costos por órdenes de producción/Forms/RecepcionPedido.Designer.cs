@@ -71,6 +71,7 @@
             this.textBox2.Size = new System.Drawing.Size(165, 31);
             this.textBox2.TabIndex = 18;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // comboBox1
             // 
@@ -107,6 +108,7 @@
             this.button4.Size = new System.Drawing.Size(150, 25);
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button3
             // 
@@ -129,6 +131,7 @@
             this.button2.Size = new System.Drawing.Size(211, 115);
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 

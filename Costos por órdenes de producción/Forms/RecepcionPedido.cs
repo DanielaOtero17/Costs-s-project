@@ -17,6 +17,9 @@ namespace Costos_por_órdenes_de_producción.Forms
         public Classes.Principal principal { get; set; }
 
         Forms.RequisicionMateriales requisicion { get; set; }
+        HojaCostos hoja { get; set; }
+
+        ManoObra mano_De_Obra { get; set; }
 
         public RecepcionPedido(List<Classes.Pedido> listaPedidos)
         {
@@ -26,7 +29,10 @@ namespace Costos_por_órdenes_de_producción.Forms
             cargarPedidos_comboBox();
             principal.LoadData_Articulos();
             principal.cargarMateriales();
+            principal.cargarTipoLabor();
             requisicion = new Forms.RequisicionMateriales(this);
+            hoja = null;
+            mano_De_Obra = new ManoObra(this);
         }
 
         private void RecepcionPedido_Load(object sender, EventArgs e)
@@ -51,21 +57,26 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         private void HojaCostos_Btn_Click(object sender, EventArgs e)
         {
-            try{ 
+            
 
-            HojaCostos hoja = new HojaCostos(darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString())),this);
-                this.Visible = false;;
+            hoja = new HojaCostos(darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString())),this);
+           this.Visible = false;
+
+            cargarHojaCostosRequisicion();
+            hoja.calcularTotalMD();
+            hoja.calcularHorasTrabajadas();
+            hoja.cargarTotalHojaCostos();
+
             hoja.Show();
-        }
-           catch
-            {
-                MessageBox.Show("Debe seleccionar una orden.");
-            }
+        
+           
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+            textBox2.Text = ped.estado;
+           
         }
 
         public Classes.Pedido darPedidoSeleccionado(int numPedido)
@@ -86,46 +97,75 @@ namespace Costos_por_órdenes_de_producción.Forms
         private void Button1_Click(object sender, EventArgs e)
         {
 
-            // try
-            //  {
-            //Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+             try
+             {
                 cargarDatosRequisicion(asignarMaterialesAPedido());
                 requisicion.Show();
                 this.Hide();
-            
-           /* }
+            }
             catch
             {
                 MessageBox.Show("Debe seleccionar una orden.");
-            }*/
+            }
         }
 
-        public void cargarDatosRequisicion(Classes.Pedido ped)
+        public void cargarHojaCostosRequisicion()
         {
-            requisicion.label6.Text = ped.numeroPedido + "";
-            Classes.Articulo art = principal.searchArticle(ped.articulo);
-            requisicion.richTextBox1.Text = art.name + ": " + art.description + "";
-
-            asignarMaterialesAPedido();
-
-            if (ped.requisicion != null)
+            Classes.Pedido ped = asignarMaterialesAPedido();
+            try
             {
-
-                MessageBox.Show("Hay" + ped.requisicion.materiales.Count + " materiales");
                 for (int i = 0; i < ped.requisicion.materiales.Count; i++)
                 {
-                    requisicion.tablaMateriales.Rows.Add(ped.requisicion.materiales[i].descripcion,
+                    hoja.tablaMateriales.Rows.Add(ped.requisicion.materiales[i].descripcion,
                         ped.requisicion.materiales[i].cantidad, ped.requisicion.materiales[i].valorUnitario,
                         ped.requisicion.materiales[i].valorTotal);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No se ha podido cargar la hoda de materiales en costos.");
+            }
+
+        }
+
+        public void cargarDatosManoObra(Classes.Pedido ped)
+        {
+
+        }
+        public void cargarDatosRequisicion(Classes.Pedido ped)
+        {
+             asignarTrabajadoresAPedido();
+
+            if (ped.trabajadores != null)
+            {
+
+                MessageBox.Show("Hay" + ped.trabajadores.trabajadores.Count + " trabajadores");
+                for (int i = 0; i < ped.trabajadores.trabajadores.Count; i++)
+                {
+                    mano_De_Obra.tablaManoObra.Rows.Add(ped.trabajadores.trabajadores[i].name,
+                       ped.trabajadores.trabajadores[i].horasTrabajadas, ped.trabajadores.trabajadores[i].tipo.valuePerhour,
+                        ped.trabajadores.totalValue); 
                 }
 
             }
             else
             {
-                MessageBox.Show("No hay materiales");
-                requisicion.tablaMateriales.Rows.Add("prueba vacia 1",  8, 2000, 16000);
-                requisicion.tablaMateriales.Rows.Add("prueba vacia 2", 9, 2000, 18000);
+                MessageBox.Show("No hay trabajadores");
             }
+        }
+
+        public Classes.Pedido asignarTrabajadoresAPedido()
+        {
+            Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+
+            for (int i = 0; i < principal.manos_de_obra.Count; i++)
+            {
+                if (principal.manos_de_obra[i].numPedido == ped.numeroPedido)
+                {
+                    ped.trabajadores = principal.manos_de_obra[i];                       ;
+                }
+            }
+            return ped;
         }
 
         public Classes.Pedido asignarMaterialesAPedido()
@@ -136,14 +176,39 @@ namespace Costos_por_órdenes_de_producción.Forms
             {
                 if (principal.requisiciones[i].numero_pedido==ped.numeroPedido )
                 {
-                    MessageBox.Show("El numero de pedido coincide");
                     ped.requisicion = principal.requisiciones[i];
                 }
             }
             return ped;
         }
 
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+            
+            MessageBoxButtons botones = MessageBoxButtons.YesNo;
+            DialogResult dr = MessageBox.Show("Si cambia el estado de un pedido, no podrá volver a modificarlo. " +
+                "¿Está seguro de esta acción?", "Confirmación", botones, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                textBox2.Text = ped.cambiarEstado();
+            }
+            
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            cargarDatosManoObra(asignarMaterialesAPedido());
+       
+            this.Hide();
+        }
     }
 
 

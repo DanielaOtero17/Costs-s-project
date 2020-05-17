@@ -213,7 +213,7 @@ namespace Costos_por_órdenes_de_producción.Classes
                         {
                             String[] tipochar = tipocomp.Split('/');
 
-                            TipoLabor aux = buscarTipoLabor(tipochar[2]);
+                            TipoLabor aux = buscarTipoLabor(tipochar[1]);
 
                             worktypes.Add(new TipoLabor(tipochar[0],double.Parse(tipochar[1])));
                         }
@@ -353,6 +353,7 @@ namespace Costos_por_órdenes_de_producción.Classes
         public void addDataPedido(Pedido ped)
         {
             string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Pedidos.txt";
+             string path2 = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\EstadoPedidos.txt";
 
             if (!File.Exists(path))
             {
@@ -366,6 +367,20 @@ namespace Costos_por_órdenes_de_producción.Classes
                 using (StreamWriter sw = File.AppendText(path))
                 {
                     sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente + "/" + ped.articulo + "/" + ped.fechaCreacion.ToShortDateString());
+                }
+            }
+            if (!File.Exists(path2))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.estado);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.estado);
                 }
             }
         }

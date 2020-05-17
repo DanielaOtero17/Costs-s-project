@@ -54,5 +54,16 @@ namespace Costos_por_órdenes_de_producción.Classes
             }
             return false;
         }
+
+        public String cambiarEstado()
+        {
+            if (estado.Equals(ESTADO_EN_PROCESO))
+            {
+                estado = ESTADO_TERMINADA;
+            }else if (estado.Equals(ESTADO_TERMINADA)){
+                estado = ESTADO_VENDIDA;
+            }
+            return estado;
+        }
     }
 }

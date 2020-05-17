@@ -21,30 +21,45 @@ namespace Costos_por_órdenes_de_producción.Forms
             InitializeComponent();
             pedido = elPedido;
             textBox2.Text = pedido.numeroPedido + "";
-            cargarDatosHojaCostos();
+            
             recepcion = ventanaAntes;
+            
             
             
         }
 
-        public void cargarDatosHojaCostos()
+        public void calcularTotalMD()
+        {
+            double total = 0;
+            for(int i=0; i<tablaMateriales.Rows.Count -1; i++)
+            {
+                total += double.Parse(tablaMateriales.Rows[i].Cells[3].Value.ToString());
+            }
+            MessageBox.Show(total + "");
+           totalMD.Text = total+"";
+
+        }
+        
+        public void cargarTotalHojaCostos()
         {
             double cif = 0;
-            double materiales = 0;
-            double manoDeObra = 0;
+            double materiales = double.Parse(totalMD.Text);
+            double manoDeObra = double.Parse(totalMO.Text);
 
-            if (pedido.requisicion != null)
-            {
-                materiales = pedido.requisicion.totalRequisicion;
-            }
-            if (pedido.trabajadores != null)
-            {
-                manoDeObra = pedido.trabajadores.totalValue;
-                cif = darTasa() * pedido.trabajadores.totalHoras;
-            }
-            
+            cif = darTasa() * calcularHorasTrabajadas();
             double total = materiales + manoDeObra + cif;
             costoTotal.Text = total + "";
+        }
+
+        public double calcularHorasTrabajadas()
+        {
+            double totalHoras = 0;
+           for(int i=0;i< tablaManoObra.Rows.Count-1; i++)
+            {
+                totalHoras += double.Parse(tablaManoObra.Rows[i].Cells[1].Value.ToString());
+            }
+
+            return totalHoras;
         }
 
         public double darTasa()
@@ -108,6 +123,11 @@ namespace Costos_por_órdenes_de_producción.Forms
         {
             this.Close();
             recepcion.Show();
+        }
+
+        private void TotalMD_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

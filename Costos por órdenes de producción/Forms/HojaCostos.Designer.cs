@@ -137,6 +137,7 @@
             this.tablaMateriales.Location = new System.Drawing.Point(40, 82);
             this.tablaMateriales.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.tablaMateriales.Name = "tablaMateriales";
+            this.tablaMateriales.ReadOnly = true;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaMateriales.Size = new System.Drawing.Size(718, 239);
@@ -147,12 +148,14 @@
             // 
             this.columnaValorTotal.HeaderText = "VALOR TOTAL";
             this.columnaValorTotal.Name = "columnaValorTotal";
+            this.columnaValorTotal.ReadOnly = true;
             // 
             // ColumnaValorUnitario
             // 
             this.ColumnaValorUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.ColumnaValorUnitario.HeaderText = "VALOR UNITARIO";
             this.ColumnaValorUnitario.Name = "ColumnaValorUnitario";
+            this.ColumnaValorUnitario.ReadOnly = true;
             this.ColumnaValorUnitario.Width = 113;
             // 
             // columnaCantidad
@@ -160,6 +163,7 @@
             this.columnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.columnaCantidad.HeaderText = "CANTIDAD";
             this.columnaCantidad.Name = "columnaCantidad";
+            this.columnaCantidad.ReadOnly = true;
             this.columnaCantidad.Width = 87;
             // 
             // columnaConcepto
@@ -169,6 +173,7 @@
             this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle1;
             this.columnaConcepto.HeaderText = "CONCEPTO";
             this.columnaConcepto.Name = "columnaConcepto";
+            this.columnaConcepto.ReadOnly = true;
             // 
             // textBox4
             // 
@@ -295,6 +300,7 @@
             this.totalMD.TabIndex = 43;
             this.totalMD.Text = "0";
             this.totalMD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.totalMD.TextChanged += new System.EventHandler(this.TotalMD_TextChanged);
             // 
             // label3
             // 
@@ -455,7 +461,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox totalMD;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox totalMO;
         public System.Windows.Forms.DataGridView dataGridView1;
@@ -467,5 +472,6 @@
         private System.Windows.Forms.TextBox totalCIF;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox costoTotal;
+        public System.Windows.Forms.TextBox totalMD;
     }
 }

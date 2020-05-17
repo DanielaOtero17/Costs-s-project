@@ -13,13 +13,17 @@ namespace Costos_por_órdenes_de_producción.Forms
     public partial class ManoObra : Form
     {
         private Classes.Principal principal { get; set; }
-        public ManoObra()
+        public RecepcionPedido recepcion { get; set; }
+        public ManoObra(RecepcionPedido recep)
         {
             InitializeComponent();
+            principal = new Classes.Principal();
+            recepcion = recep;
             principal.cargarPedidos();
             principal.cargarOperarios();
             principal.cargarTipoLabor();
             cargarComboBox_Operarios();
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -88,6 +92,12 @@ namespace Costos_por_órdenes_de_producción.Forms
         private void Label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            recepcion.Show();
         }
     }
 }
