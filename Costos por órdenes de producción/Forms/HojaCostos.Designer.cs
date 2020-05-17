@@ -267,6 +267,7 @@
             this.tablaManoObra.Location = new System.Drawing.Point(40, 398);
             this.tablaManoObra.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.tablaManoObra.Name = "tablaManoObra";
+            this.tablaManoObra.ReadOnly = true;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablaManoObra.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaManoObra.Size = new System.Drawing.Size(718, 239);
@@ -280,12 +281,14 @@
             this.columnaOperario.DefaultCellStyle = dataGridViewCellStyle3;
             this.columnaOperario.HeaderText = "OPERARIO";
             this.columnaOperario.Name = "columnaOperario";
+            this.columnaOperario.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn1.HeaderText = "HORAS TRABAJADAS";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 131;
             // 
             // ColumnaPrecioUnitario
@@ -342,6 +345,7 @@
             this.tablaCIF.Location = new System.Drawing.Point(40, 714);
             this.tablaCIF.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.tablaCIF.Name = "tablaCIF";
+            this.tablaCIF.ReadOnly = true;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablaCIF.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tablaCIF.Size = new System.Drawing.Size(720, 70);
@@ -354,12 +358,14 @@
             this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn3.HeaderText = "PRESUPUESTO CIF";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.HeaderText = "HORAS PRESUPUESTADAS MOD";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -372,6 +378,7 @@
             // 
             this.HorasTrabajadas.HeaderText = "HORAS TRABAJADAS";
             this.HorasTrabajadas.Name = "HorasTrabajadas";
+            this.HorasTrabajadas.ReadOnly = true;
             // 
             // label4
             // 

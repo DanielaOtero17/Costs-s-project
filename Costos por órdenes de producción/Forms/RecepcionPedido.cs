@@ -286,7 +286,6 @@ namespace Costos_por_órdenes_de_producción.Forms
                 textBox2.Text = ped.cambiarEstado();
             }
 
-
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -297,6 +296,14 @@ namespace Costos_por_órdenes_de_producción.Forms
             {
                 CIF.textBox2.Text = comboBox1.SelectedItem.ToString();
                 Classes.Pedido ped = principal.searchPedido(int.Parse(comboBox1.SelectedItem.ToString()));
+
+                Classes.CIF cifEsco = darCifEscogido();
+
+                if (cifEsco != null)
+                {
+                    CIF.textBox1.Text = cifEsco.cif_presupuestado.ToString();
+                    CIF.textBox3.Text = cifEsco.horas_presupuestadas.ToString();
+                }
 
                 this.Hide();
                 CIF.Show();
