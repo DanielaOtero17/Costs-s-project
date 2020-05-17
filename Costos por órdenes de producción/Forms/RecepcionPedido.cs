@@ -15,6 +15,8 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         public List<Classes.Pedido> pedidos { get; set; }
         public Classes.Principal principal { get; set; }
+
+        Forms.RequisicionMateriales requisicion { get; set; }
         public RecepcionPedido(List<Classes.Pedido> listaPedidos)
         {
             principal = new Classes.Principal();
@@ -22,6 +24,8 @@ namespace Costos_por_órdenes_de_producción.Forms
             pedidos = listaPedidos;
             cargarPedidos_comboBox();
             principal.LoadData_Articulos();
+            principal.cargarMateriales();
+            requisicion = new Forms.RequisicionMateriales(this);
         }
 
         private void RecepcionPedido_Load(object sender, EventArgs e)
@@ -81,20 +85,39 @@ namespace Costos_por_órdenes_de_producción.Forms
         private void Button1_Click(object sender, EventArgs e)
         {
       
-           try
-            {
-                Forms.RequisicionMateriales requisicion = new Forms.RequisicionMateriales();
-                
+          // try
+          //  {
                 Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
-                requisicion.label6.Text = ped.numeroPedido + "";
-                Classes.Articulo art =   principal.searchArticle(ped.articulo);
-                requisicion.richTextBox1.Text = art.name + ": " + art.description + "";
+                cargarDatosRequisicion(ped);
                 requisicion.Show();
-            }
+                this.Hide();
+            
+           /* }
             catch
             {
                 MessageBox.Show("Debe seleccionar una orden.");
+            }*/
+        }
+
+        public void cargarDatosRequisicion(Classes.Pedido ped)
+        {
+            requisicion.label6.Text = ped.numeroPedido + "";
+            Classes.Articulo art = principal.searchArticle(ped.articulo);
+            requisicion.richTextBox1.Text = art.name + ": " + art.description + "";
+
+            if (ped.requisicion != null)
+            {
+                
+                for(int i= 0; i < requisicion.darMateriales().Count; i++)
+                {
+                    requisicion.tablaMateriales.Rows.Add(requisicion.darMateriales()[i].descripcion, 
+                        requisicion.darMateriales()[i].cantidad, requisicion.darMateriales()[i].valorUnitario,
+                        requisicion.darMateriales()[i].valorTotal);
+                }
+
             }
         }
+
+
     }
 }

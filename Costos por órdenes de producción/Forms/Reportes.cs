@@ -42,7 +42,7 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             RecepcionPedido recepcion = new RecepcionPedido(pedidos);
             recepcion.Show();
         }

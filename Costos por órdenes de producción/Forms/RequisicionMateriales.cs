@@ -18,17 +18,21 @@ namespace Costos_por_órdenes_de_producción.Forms
         List<Classes.Material> materiales { get; set; }
         Classes.Principal principal { get; set; }
 
+        RecepcionPedido recepcion { get; set; }
+
         int verif = 0;
        
 
-        public RequisicionMateriales()
+        public RequisicionMateriales(RecepcionPedido recep)
         {
             InitializeComponent();
             principal = new Classes.Principal();
             materiales = new List<Classes.Material>();
+            recepcion = recep;
 
             principal.cargarPedidos();
             principal.LoadData_Articulos();
+
         }
 
         public List<Classes.Material> darMateriales()
@@ -94,7 +98,7 @@ namespace Costos_por_órdenes_de_producción.Forms
             calcularTotal();
         }
 
-        private void calcularTotal()
+        private decimal calcularTotal()
         {
             decimal suma = 0;
 
@@ -114,6 +118,7 @@ namespace Costos_por_órdenes_de_producción.Forms
                 }
             }
             textBox2.Text = suma + "";
+            return suma;
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -130,13 +135,22 @@ namespace Costos_por_órdenes_de_producción.Forms
         {
             if (verif == 0)
             {
-                MessageBox.Show("Primero debe guardar los datos de la requisición.");
+                
+                MessageBoxButtons botones = MessageBoxButtons.YesNo;
+                DialogResult dr = MessageBox.Show("Si sale ahora no se guardarán los cambios. ¿Seguro que desea salir?", 
+                                        "confirmación", botones,   MessageBoxIcon.Question);
+
+                if(dr == DialogResult.Yes)
+                {
+                    this.Hide();
+                    recepcion.Show();
+                }
+                
             }
             else
             {
                 this.Hide();
-                Form1 principal = new Form1();
-                principal.Show();
+                recepcion.Show();
             }
         }
 

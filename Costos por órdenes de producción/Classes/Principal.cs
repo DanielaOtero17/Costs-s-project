@@ -10,13 +10,15 @@ namespace Costos_por_órdenes_de_producción.Classes
 {
     public class Principal
     {
+        
+
         public List<Articulo> articles { get; set; }
         public List<int> codes { get; set; }
         public List<Cliente> clients { get; set; }
         public List<Operario> workers { get; set; }
         public List<TipoLabor> worktypes { get; set; }
         public List<Pedido> pedidos { get; set; }
-        public List<RequisicionMaterial> requisiciones {get; set;}
+        public List<RequisicionMaterial> requisiciones { get; set; }
         public List<ManoDeObra> manos_de_obra { get; set; }
 
         public Principal()
@@ -58,7 +60,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             clients.Add(client);
             addDataClient(client);
         }
-        public void registrarPedido(int codigo, int cantidad, String cli, String art, DateTime fecha )
+        public void registrarPedido(int codigo, int cantidad, String cli, String art, DateTime fecha)
         {
             Pedido pedido = new Pedido(codigo, cantidad, cli, art, fecha);
 
@@ -67,14 +69,14 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         }
 
-        public void registrarRequisicion(int numPedido,List<Material> materiales )
+        public void registrarRequisicion(int numPedido, List<Material> materiales)
         {
-            RequisicionMaterial requisicion = new RequisicionMaterial(numPedido,materiales);
+            RequisicionMaterial requisicion = new RequisicionMaterial(numPedido, materiales);
 
             Pedido aux = searchPedido(numPedido);
 
             int ubicacion = pedidos.IndexOf(aux);
-            
+
             pedidos[ubicacion].requisicion = requisicion;
 
             requisiciones.Add(requisicion);
@@ -82,7 +84,7 @@ namespace Costos_por_órdenes_de_producción.Classes
         }
         public Cliente searchClient(String id)
         {
-            for(int i = 0; i < clients.Count; i++)
+            for (int i = 0; i < clients.Count; i++)
             {
                 if (id.Equals(clients[i].id))
                     return clients[i];
@@ -101,14 +103,14 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         public Pedido searchPedido(int numPedido)
         {
-            
+
             for (int i = 0; i < pedidos.Count; i++)
             {
                 if (numPedido == pedidos[i].numeroPedido)
                 {
                     return pedidos[i];
                 }
-                    
+
             }
             return null;
         }
@@ -144,6 +146,51 @@ namespace Costos_por_órdenes_de_producción.Classes
             }
             return pedidos;
         }
+        public void cargarMateriales()
+            {
+                string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Requisiciones_Materiales.txt";
+
+                if (File.Exists(path))
+                {
+                    using (StreamReader sr = new StreamReader(path))
+                    {
+                        Boolean verif = false;
+                        while (verif == false)
+                        {
+                            String line1 = sr.ReadLine();
+                            String line2 = sr.ReadLine();
+
+
+                            if (line1 == null)
+                            {
+                                verif = true;
+                            }
+                            else
+                            {
+                                String[] id_total = line1.Split('/');
+                                String[] materiales = line2.Split('/');
+                                List<Material> materials = new List<Material>();
+
+
+                                for (int i = 0; i < materiales.Length; i++)
+                                {
+                                    String[] material_aux = materiales[i].Split('-');
+
+                                    Material mat = new Material(material_aux[0], int.Parse(material_aux[1]), double.Parse(material_aux[2]),
+                                        double.Parse(material_aux[3]));
+                                    materials.Add(mat);
+                                }
+
+                                RequisicionMaterial requi = new RequisicionMaterial(int.Parse(id_total[0]), materials);
+                                requi.totalRequisicion = double.Parse(id_total[1]);
+                                requisiciones.Add(requi);
+
+                            }
+                        }
+                    }
+                }
+
+           }
 
         public void cargarTipoLabor()
         {
@@ -356,11 +403,11 @@ namespace Costos_por_órdenes_de_producción.Classes
                         info += requisicion.materiales[i].descripcion + "-" +
                             requisicion.materiales[i].cantidad + "-" + requisicion.materiales[i].valorUnitario +
                             "-" + requisicion.materiales[i].valorTotal + "/" ;
-
-                        Console.WriteLine(info);
                     }
-                    sw.WriteLine(requisicion.numero_pedido + "/" + info);
+                    sw.WriteLine(requisicion.numero_pedido + "/" + requisicion.totalRequisicion);
 
+                    sw.WriteLine(info);
+                    
                
                 }
             }
@@ -375,7 +422,9 @@ namespace Costos_por_órdenes_de_producción.Classes
                             requisicion.materiales[i].cantidad + "-" + requisicion.materiales[i].valorUnitario +
                             "-" + requisicion.materiales[i].valorTotal + "/";
                     }
-                    sw.WriteLine(requisicion.numero_pedido + "/" + info);
+                    sw.WriteLine(requisicion.numero_pedido + "/" + requisicion.totalRequisicion);
+                    sw.WriteLine(info);
+
                 }
             }
         }

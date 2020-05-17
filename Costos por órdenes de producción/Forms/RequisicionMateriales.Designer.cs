@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -85,13 +85,13 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::Costos_por_órdenes_de_producción.Properties.Resources.HOME;
+            this.button1.BackgroundImage = global::Costos_por_órdenes_de_producción.Properties.Resources.BACK_BTN;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(11, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 42);
+            this.button1.Size = new System.Drawing.Size(46, 40);
             this.button1.TabIndex = 31;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -109,8 +109,8 @@
             this.columnaValorTotal});
             this.tablaMateriales.Location = new System.Drawing.Point(24, 184);
             this.tablaMateriales.Name = "tablaMateriales";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaMateriales.Size = new System.Drawing.Size(625, 234);
             this.tablaMateriales.TabIndex = 33;
             this.tablaMateriales.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.TablaMateriales_CellBeginEdit);
@@ -120,8 +120,8 @@
             // columnaConcepto
             // 
             this.columnaConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle3;
             this.columnaConcepto.HeaderText = "CONCEPTO";
             this.columnaConcepto.Name = "columnaConcepto";
             // 
@@ -192,6 +192,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(24, 108);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(461, 61);
