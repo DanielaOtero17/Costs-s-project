@@ -84,5 +84,10 @@ namespace Costos_por_órdenes_de_producción.Forms
             tablaManoObra.Rows[pos - 1].Cells[4].Value = pTotal;
             
         }
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tablaManoObra = new System.Windows.Forms.DataGridView();
             this.columnaOperario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,16 +77,16 @@
             this.columnaValorTotal});
             this.tablaManoObra.Location = new System.Drawing.Point(12, 215);
             this.tablaManoObra.Name = "tablaManoObra";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablaManoObra.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaManoObra.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaManoObra.Size = new System.Drawing.Size(649, 202);
             this.tablaManoObra.TabIndex = 34;
             // 
             // columnaOperario
             // 
             this.columnaOperario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnaOperario.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnaOperario.DefaultCellStyle = dataGridViewCellStyle1;
             this.columnaOperario.HeaderText = "OPERARIO";
             this.columnaOperario.Name = "columnaOperario";
             // 
@@ -143,6 +143,7 @@
             this.label6.TabIndex = 37;
             this.label6.Text = "000";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Click += new System.EventHandler(this.Label6_Click);
             // 
             // pictureBox3
             // 

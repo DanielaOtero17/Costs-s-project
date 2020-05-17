@@ -29,7 +29,6 @@ namespace Costos_por_órdenes_de_producción.Forms
 
             principal.cargarPedidos();
             principal.LoadData_Articulos();
-
         }
 
         public List<Classes.Material> darMateriales()
@@ -139,6 +138,11 @@ namespace Costos_por_órdenes_de_producción.Forms
                 Form1 principal = new Form1();
                 principal.Show();
             }
+        }
+
+        private void RequisicionMateriales_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

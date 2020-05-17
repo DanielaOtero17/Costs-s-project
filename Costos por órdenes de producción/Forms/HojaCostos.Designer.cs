@@ -54,16 +54,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.totalMD = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.totalMO = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HorasTrabajadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.totalCIF = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.costoTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMateriales)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaManoObra)).BeginInit();
@@ -82,6 +82,7 @@
             this.button5.Size = new System.Drawing.Size(46, 44);
             this.button5.TabIndex = 21;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // label2
             // 
@@ -140,6 +141,7 @@
             this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaMateriales.Size = new System.Drawing.Size(718, 239);
             this.tablaMateriales.TabIndex = 39;
+            this.tablaMateriales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaMateriales_CellContentClick);
             // 
             // columnaValorTotal
             // 
@@ -194,13 +196,13 @@
             this.flowLayoutPanel1.Controls.Add(this.textBox1);
             this.flowLayoutPanel1.Controls.Add(this.tablaManoObra);
             this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.textBox5);
+            this.flowLayoutPanel1.Controls.Add(this.totalMO);
             this.flowLayoutPanel1.Controls.Add(this.textBox3);
             this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
             this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.textBox6);
+            this.flowLayoutPanel1.Controls.Add(this.totalCIF);
             this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Controls.Add(this.textBox7);
+            this.flowLayoutPanel1.Controls.Add(this.costoTotal);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
@@ -291,6 +293,7 @@
             this.totalMD.ReadOnly = true;
             this.totalMD.Size = new System.Drawing.Size(127, 27);
             this.totalMD.TabIndex = 43;
+            this.totalMD.Text = "0";
             this.totalMD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -305,18 +308,19 @@
             this.label3.TabIndex = 44;
             this.label3.Text = "Total Mano de Obra";
             // 
-            // textBox5
+            // totalMO
             // 
-            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(435, 652);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(127, 27);
-            this.textBox5.TabIndex = 45;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox5.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
+            this.totalMO.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.totalMO.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalMO.Location = new System.Drawing.Point(435, 652);
+            this.totalMO.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.totalMO.Name = "totalMO";
+            this.totalMO.ReadOnly = true;
+            this.totalMO.Size = new System.Drawing.Size(127, 27);
+            this.totalMO.TabIndex = 45;
+            this.totalMO.Text = "0";
+            this.totalMO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.totalMO.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
             // dataGridView1
             // 
@@ -375,17 +379,18 @@
             this.label4.TabIndex = 47;
             this.label4.Text = "Total Costos Indirectos de Fabricación";
             // 
-            // textBox6
+            // totalCIF
             // 
-            this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(493, 788);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(127, 27);
-            this.textBox6.TabIndex = 48;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.totalCIF.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.totalCIF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCIF.Location = new System.Drawing.Point(493, 788);
+            this.totalCIF.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.totalCIF.Name = "totalCIF";
+            this.totalCIF.ReadOnly = true;
+            this.totalCIF.Size = new System.Drawing.Size(127, 27);
+            this.totalCIF.TabIndex = 48;
+            this.totalCIF.Text = "0";
+            this.totalCIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -399,17 +404,18 @@
             this.label5.TabIndex = 49;
             this.label5.Text = "COSTO TOTAL DE LA ORDEN";
             // 
-            // textBox7
+            // costoTotal
             // 
-            this.textBox7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(375, 830);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(178, 37);
-            this.textBox7.TabIndex = 50;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.costoTotal.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.costoTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costoTotal.Location = new System.Drawing.Point(375, 830);
+            this.costoTotal.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.costoTotal.Name = "costoTotal";
+            this.costoTotal.ReadOnly = true;
+            this.costoTotal.Size = new System.Drawing.Size(178, 37);
+            this.costoTotal.TabIndex = 50;
+            this.costoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.costoTotal.TextChanged += new System.EventHandler(this.TextBox7_TextChanged);
             // 
             // HojaCostos
             // 
@@ -451,15 +457,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox totalMD;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox totalMO;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn HorasTrabajadas;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox totalCIF;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox costoTotal;
     }
 }

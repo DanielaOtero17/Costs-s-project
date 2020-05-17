@@ -63,21 +63,15 @@ namespace Costos_por_órdenes_de_producción
         private void Button2_Click(object sender, EventArgs e)
         {
             DateTime fecha = fechaPedido.Value;
-            Classes.Cliente cli = principal.searchClient(darIdClienteEscogido());
-            Classes.Articulo art = principal.searchArticle(darIdArticuloEscogido());
+ 
+            Classes.Pedido ped = new Classes.Pedido(int.Parse(label6.Text), int.Parse(textBox2.Text), darNombreClienteEscogido(), darIdArticuloEscogido(), fecha);
 
-            Classes.Pedido ped = new Classes.Pedido(int.Parse(label6.Text), int.Parse(textBox2.Text), cli, art, fecha);
-
-            principal.registrarPedido(int.Parse(label6.Text), int.Parse(textBox2.Text), cli, art, fecha);
-            MessageBox.Show(null," Continuemos con el formulario de Requisición.", "Registro satisfactorio");
+            principal.registrarPedido(int.Parse(label6.Text), int.Parse(textBox2.Text), darNombreClienteEscogido(), darIdArticuloEscogido(), fecha);
+            MessageBox.Show(null,"Se ha registrado correctamente el pedido.", "Registro satisfactorio");
             this.Hide();
-
+            Form1 form = new Form1();
+            form.Show();
             
-
-            Forms.RequisicionMateriales requisicion = new Forms.RequisicionMateriales();
-            requisicion.label6.Text = ped.numeroPedido + "";
-            requisicion.richTextBox1.Text = ped.articulo.name + ": " + ped.articulo.description + "";
-            requisicion.Show();
         }
 
         private void cargarCodigo()
@@ -109,7 +103,7 @@ namespace Costos_por_órdenes_de_producción
 
                             
                             principal.pedidos.Add(new Classes.Pedido(int.Parse(tipochar[0]), int.Parse(tipochar[1]),
-                                principal.searchClient(tipochar[2]), principal.searchArticle(tipochar[3]),
+                                tipochar[2], tipochar[3],
                                new DateTime(int.Parse(tipochar[6]), int.Parse(tipochar[5]), 
                                int.Parse(tipochar[4]))));
 
@@ -119,11 +113,11 @@ namespace Costos_por_órdenes_de_producción
             }
         }
 
-        private String darIdClienteEscogido()
+        private String darNombreClienteEscogido()
         {
             String nombreID = comboBox1.SelectedItem.ToString();
             String[] datosCliente = nombreID.Split('-');
-            return datosCliente[1];
+            return datosCliente[0];
         }
         public String darIdArticuloEscogido()
         {

@@ -8,14 +8,17 @@ namespace Costos_por_órdenes_de_producción.Classes
 {
      public class Pedido
     {
+        public static String ESTADO_EN_PROCESO = "En producción";
+        public static String ESTADO_TERMINADA = "Terminada";
+        public static String ESTADO_VENDIDA = "Vendida";
         // Número de identificación del pedido
         public int numeroPedido { get; set; }
         // Cantidad del artículo a producir
         public int cantidad { get; set; }
         //Cliente que realiza el pedido
-        public Cliente cliente { get; set; }
+        public String cliente { get; set; }
         //Artículo que se va a producir
-        public Articulo articulo { get; set; }
+        public String articulo { get; set; }
 
         public DateTime fechaCreacion  { get;set; } 
 
@@ -23,10 +26,13 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         public double CIF_presupuestado { get; set; }
 
-        public List<Operario> trabajadores_MO { get; set; }
+        public ManoDeObra trabajadores { get; set; }
+
+        public String estado { get; set; }
+        public double Horas_presupuestadas { get; set; }
 
 
-        public Pedido(int i, int cant, Cliente cli, Articulo art, DateTime fecha)
+        public Pedido(int i, int cant, String cli, String art, DateTime fecha)
         {
             numeroPedido = i;
             cantidad = cant;
@@ -35,7 +41,9 @@ namespace Costos_por_órdenes_de_producción.Classes
             cliente = cli;
             requisicion = null;
             CIF_presupuestado = 0;
-            trabajadores_MO = null;
+            trabajadores = null;
+            estado = ESTADO_EN_PROCESO;
+            Horas_presupuestadas = 0;
         }
 
         public Boolean compareTo(String cliente, String entrada)

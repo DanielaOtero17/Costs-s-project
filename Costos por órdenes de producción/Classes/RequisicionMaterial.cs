@@ -11,11 +11,13 @@ namespace Costos_por_órdenes_de_producción.Classes
     
         public List<Material> materiales { get; set; }
         public int numero_pedido { get; set; }
+        public double totalRequisicion { get; set; }
 
         public RequisicionMaterial(int numPedido, List<Material> mate)
         {
             numero_pedido = numPedido;
             materiales = mate;
+            totalRequisicion = 0;
         }
 
     }

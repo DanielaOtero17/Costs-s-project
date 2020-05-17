@@ -45,7 +45,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(13, 144);
+            this.label1.Location = new System.Drawing.Point(16, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 23);
             this.label1.TabIndex = 14;
@@ -56,7 +56,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(50, 42);
+            this.label2.Location = new System.Drawing.Point(53, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 28);
             this.label2.TabIndex = 17;
@@ -65,7 +65,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(32, 170);
+            this.textBox2.Location = new System.Drawing.Point(35, 178);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(165, 31);
@@ -76,9 +76,9 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 73);
+            this.comboBox1.Location = new System.Drawing.Point(38, 50);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 30);
+            this.comboBox1.Size = new System.Drawing.Size(162, 30);
             this.comboBox1.TabIndex = 19;
             this.comboBox1.Text = "Seleccionar...";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
@@ -102,7 +102,7 @@
             this.button4.BackgroundImage = global::Costos_por_órdenes_de_producción.Properties.Resources.CHANGE_BTN;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(38, 204);
+            this.button4.Location = new System.Drawing.Point(41, 212);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 25);
             this.button4.TabIndex = 15;
@@ -140,6 +140,7 @@
             this.button1.Size = new System.Drawing.Size(211, 115);
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // hojaCostos_Btn
             // 

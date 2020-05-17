@@ -58,7 +58,7 @@ namespace Costos_por_órdenes_de_producción.Classes
             clients.Add(client);
             addDataClient(client);
         }
-        public void registrarPedido(int codigo, int cantidad, Cliente cli, Articulo art, DateTime fecha )
+        public void registrarPedido(int codigo, int cantidad, String cli, String art, DateTime fecha )
         {
             Pedido pedido = new Pedido(codigo, cantidad, cli, art, fecha);
 
@@ -134,7 +134,7 @@ namespace Costos_por_órdenes_de_producción.Classes
                             String[] tipochar = tipocomp.Split('/');
 
                             pedidos.Add(new Pedido(int.Parse(tipochar[0]), int.Parse(tipochar[1]),
-                                 searchClient(tipochar[2]), searchArticle(tipochar[3]),
+                                 tipochar[2], tipochar[3],
                                 new DateTime(int.Parse(tipochar[6]), int.Parse(tipochar[5]),
                                 int.Parse(tipochar[4]))));
 
@@ -311,14 +311,14 @@ namespace Costos_por_órdenes_de_producción.Classes
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente.name + "/" + ped.articulo.name + "/" + ped.fechaCreacion.ToShortDateString());
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente + "/" + ped.articulo + "/" + ped.fechaCreacion.ToShortDateString());
                 }
             }
             else
             {
                 using (StreamWriter sw = File.AppendText(path))
                 {
-                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente.name + "/" + ped.articulo.name + "/" + ped.fechaCreacion.ToShortDateString());
+                    sw.WriteLine(ped.numeroPedido + "/" + ped.cantidad + "/" + ped.cliente + "/" + ped.articulo + "/" + ped.fechaCreacion.ToShortDateString());
                 }
             }
         }

@@ -12,17 +12,29 @@ namespace Costos_por_órdenes_de_producción.Forms
 {
     public partial class RecepcionPedido : Form
     {
-        
+
         public List<Classes.Pedido> pedidos { get; set; }
-        public RecepcionPedido( List<Classes.Pedido> listaPedidos)
+        public Classes.Principal principal { get; set; }
+        public RecepcionPedido(List<Classes.Pedido> listaPedidos)
         {
+            principal = new Classes.Principal();
             InitializeComponent();
             pedidos = listaPedidos;
+            cargarPedidos_comboBox();
+            principal.LoadData_Articulos();
         }
 
         private void RecepcionPedido_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void cargarPedidos_comboBox()
+        {
+            for (int i = 0; i < pedidos.Count; i++)
+            {
+                comboBox1.Items.Add(pedidos[i].numeroPedido + "");
+            }
         }
 
         private void Button5_Click(object sender, EventArgs e)
@@ -34,15 +46,21 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         private void HojaCostos_Btn_Click(object sender, EventArgs e)
         {
-            
-            HojaCostos hoja = new HojaCostos(darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString())));
-            this.Close();
+            try{ 
+
+            HojaCostos hoja = new HojaCostos(darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString())),this);
+                this.Visible = false;;
             hoja.Show();
+        }
+           catch
+            {
+                MessageBox.Show("Debe seleccionar una orden.");
+            }
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         public Classes.Pedido darPedidoSeleccionado(int numPedido)
@@ -55,7 +73,28 @@ namespace Costos_por_órdenes_de_producción.Forms
                 }
 
             }
+            
             return null;
+        }
+
+       
+        private void Button1_Click(object sender, EventArgs e)
+        {
+      
+           try
+            {
+                Forms.RequisicionMateriales requisicion = new Forms.RequisicionMateriales();
+                
+                Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+                requisicion.label6.Text = ped.numeroPedido + "";
+                Classes.Articulo art =   principal.searchArticle(ped.articulo);
+                requisicion.richTextBox1.Text = art.name + ": " + art.description + "";
+                requisicion.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Debe seleccionar una orden.");
+            }
         }
     }
 }
