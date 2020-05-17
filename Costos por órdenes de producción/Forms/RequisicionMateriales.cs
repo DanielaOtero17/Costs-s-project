@@ -15,7 +15,7 @@ namespace Costos_por_órdenes_de_producción.Forms
         int cantidad = 0;
         decimal precio_Unitario = 0;
         decimal precio_Total = 0;
-        List<Classes.Material> materiales { get; set; }
+        public List<Classes.Material> materiales { get; set; }
         Classes.Principal principal { get; set; }
 
         RecepcionPedido recepcion { get; set; }

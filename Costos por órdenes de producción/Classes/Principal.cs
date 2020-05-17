@@ -146,10 +146,11 @@ namespace Costos_por_órdenes_de_producción.Classes
             }
             return pedidos;
         }
-        public void cargarMateriales()
+        public void cargarMateriales() 
             {
                 string path = @"C:\Users\usuario\source\repos\Costs-s-project\Costos por órdenes de producción\Data\Requisiciones_Materiales.txt";
 
+           
                 if (File.Exists(path))
                 {
                     using (StreamReader sr = new StreamReader(path))
@@ -171,26 +172,25 @@ namespace Costos_por_órdenes_de_producción.Classes
                                 String[] materiales = line2.Split('/');
                                 List<Material> materials = new List<Material>();
 
-
+                            
                                 for (int i = 0; i < materiales.Length; i++)
                                 {
                                     String[] material_aux = materiales[i].Split('-');
 
-                                    Material mat = new Material(material_aux[0], int.Parse(material_aux[1]), double.Parse(material_aux[2]),
+                                Material mat = new Material(material_aux[0], int.Parse(material_aux[1]), double.Parse(material_aux[2]),
                                         double.Parse(material_aux[3]));
                                     materials.Add(mat);
-                                }
-
-                                RequisicionMaterial requi = new RequisicionMaterial(int.Parse(id_total[0]), materials);
-                                requi.totalRequisicion = double.Parse(id_total[1]);
-                                requisiciones.Add(requi);
-
+                                
                             }
+                            RequisicionMaterial requi = new RequisicionMaterial(int.Parse(id_total[0]), materials);
+                            requi.totalRequisicion = double.Parse(id_total[1]);
+                            requisiciones.Add(requi);
+                        }
                         }
                     }
                 }
-
-           }
+           
+        }
 
         public void cargarTipoLabor()
         {

@@ -17,6 +17,7 @@ namespace Costos_por_órdenes_de_producción.Forms
         public Classes.Principal principal { get; set; }
 
         Forms.RequisicionMateriales requisicion { get; set; }
+
         public RecepcionPedido(List<Classes.Pedido> listaPedidos)
         {
             principal = new Classes.Principal();
@@ -84,11 +85,11 @@ namespace Costos_por_órdenes_de_producción.Forms
        
         private void Button1_Click(object sender, EventArgs e)
         {
-      
-          // try
-          //  {
-                Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
-                cargarDatosRequisicion(ped);
+
+            // try
+            //  {
+            //Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+                cargarDatosRequisicion(asignarMaterialesAPedido());
                 requisicion.Show();
                 this.Hide();
             
@@ -105,19 +106,45 @@ namespace Costos_por_órdenes_de_producción.Forms
             Classes.Articulo art = principal.searchArticle(ped.articulo);
             requisicion.richTextBox1.Text = art.name + ": " + art.description + "";
 
+            asignarMaterialesAPedido();
+
             if (ped.requisicion != null)
             {
-                
-                for(int i= 0; i < requisicion.darMateriales().Count; i++)
+
+                MessageBox.Show("Hay" + ped.requisicion.materiales.Count + " materiales");
+                for (int i = 0; i < ped.requisicion.materiales.Count; i++)
                 {
-                    requisicion.tablaMateriales.Rows.Add(requisicion.darMateriales()[i].descripcion, 
-                        requisicion.darMateriales()[i].cantidad, requisicion.darMateriales()[i].valorUnitario,
-                        requisicion.darMateriales()[i].valorTotal);
+                    requisicion.tablaMateriales.Rows.Add(ped.requisicion.materiales[i].descripcion,
+                        ped.requisicion.materiales[i].cantidad, ped.requisicion.materiales[i].valorUnitario,
+                        ped.requisicion.materiales[i].valorTotal);
                 }
 
             }
+            else
+            {
+                MessageBox.Show("No hay materiales");
+                requisicion.tablaMateriales.Rows.Add("prueba vacia 1",  8, 2000, 16000);
+                requisicion.tablaMateriales.Rows.Add("prueba vacia 2", 9, 2000, 18000);
+            }
+        }
+
+        public Classes.Pedido asignarMaterialesAPedido()
+        {
+            Classes.Pedido ped = darPedidoSeleccionado(int.Parse(comboBox1.SelectedItem.ToString()));
+        
+            for (int i = 0; i < principal.requisiciones.Count; i++)
+            {
+                if (principal.requisiciones[i].numero_pedido==ped.numeroPedido )
+                {
+                    MessageBox.Show("El numero de pedido coincide");
+                    ped.requisicion = principal.requisiciones[i];
+                }
+            }
+            return ped;
         }
 
 
     }
+
+
 }
