@@ -33,5 +33,10 @@ namespace Costos_por_órdenes_de_producción
         {
 
         }
+
+        private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

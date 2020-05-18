@@ -37,7 +37,9 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         private void Button7_Click(object sender, EventArgs e)
         {
-           
+            RecepcionPeriodos recepcion = new RecepcionPeriodos(pedidos);
+            recepcion.Show();
+            this.Hide();
         }
 
         private void Button1_Click(object sender, EventArgs e)

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mesBOX = new System.Windows.Forms.ComboBox();
             this.anioBOX = new System.Windows.Forms.ComboBox();
             this.estadoBOX = new System.Windows.Forms.ComboBox();
@@ -110,6 +110,7 @@
             this.cargarBTN.TabIndex = 24;
             this.cargarBTN.Text = "VER DATOS";
             this.cargarBTN.UseVisualStyleBackColor = false;
+            this.cargarBTN.Click += new System.EventHandler(this.CargarBTN_Click);
             // 
             // button5
             // 
@@ -139,16 +140,16 @@
             this.tablaMateriales.Location = new System.Drawing.Point(6, 91);
             this.tablaMateriales.Name = "tablaMateriales";
             this.tablaMateriales.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaMateriales.Size = new System.Drawing.Size(682, 243);
             this.tablaMateriales.TabIndex = 34;
             // 
             // columnaConcepto
             // 
             this.columnaConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle3;
             this.columnaConcepto.HeaderText = "CONCEPTO";
             this.columnaConcepto.Name = "columnaConcepto";
             this.columnaConcepto.ReadOnly = true;

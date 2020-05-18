@@ -13,12 +13,18 @@ namespace Costos_por_órdenes_de_producción.Forms
     public partial class RecepcionPeriodos : Form
     {
         public List<Classes.Pedido> pedidos { get; set; }
+        public Classes.Principal principal { get; set; }
         public RecepcionPeriodos(List<Classes.Pedido> pedi)
         {
             InitializeComponent();
 
             pedidos = pedi;
+            principal = new Classes.Principal();
             cargarCombosBox();
+            principal.cargarPedidos();
+            principal.cargarManos_de_Obra();
+            principal.cargarMateriales();
+            principal.cargarCIF();
 
         }
 
@@ -50,6 +56,34 @@ namespace Costos_por_órdenes_de_producción.Forms
         private void MesBOX_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CargarBTN_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < principal.pedidos.Count; i++)
+            {
+                if(estadoBOX.SelectedItem.ToString().Equals(principal.pedidos[i].estado) &&
+                    mesBOX.SelectedItem.ToString().Equals(principal.pedidos[i].fechaCreacion.Month.ToString()) && 
+                    anioBOX.SelectedItem.ToString().Equals(principal.pedidos[i].fechaCreacion.Year.ToString()))
+                {
+                    if (elementosBOX.SelectedItem.ToString().Equals("Materiales"))
+                    {
+
+                    }else if (elementosBOX.SelectedItem.ToString().Equals("Mano de Obra"))
+                    {
+
+                    }else if (elementosBOX.SelectedItem.ToString().Equals("CIF"))
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar un elemento del costo.");
+                    }
+                }
+            }
+
+            tablaMateriales.Rows.Add();
         }
     }
 }

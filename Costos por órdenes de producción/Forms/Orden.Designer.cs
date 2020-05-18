@@ -142,6 +142,7 @@
             this.textBox3.TabIndex = 29;
             this.textBox3.Text = "COSTOS INDIRECTOS";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // dataGridView1
             // 
