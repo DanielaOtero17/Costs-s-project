@@ -21,6 +21,10 @@ namespace Costos_por_órdenes_de_producción.Forms
             pedidos = pedi;
             principal = new Classes.Principal();
             cargarCombosBox();
+            
+            principal.cargarOperarios();
+            principal.cargarTipoLabor();
+            principal.LoadData_Articulos();
             principal.cargarPedidos();
             principal.cargarManos_de_Obra();
             principal.cargarMateriales();
@@ -60,30 +64,63 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         private void CargarBTN_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < principal.pedidos.Count; i++)
+            /*  for(int i = 0; i < principal.pedidos.Count; i++)
+              {
+                  if(estadoBOX.SelectedItem.ToString().Equals(principal.pedidos[i].estado) &&
+                      mesBOX.SelectedItem.ToString().Equals(principal.pedidos[i].fechaCreacion.Month.ToString()) && 
+                      anioBOX.SelectedItem.ToString().Equals(principal.pedidos[i].fechaCreacion.Year.ToString()))
+                  {
+                      if (elementosBOX.SelectedItem.ToString().Equals("Materiales"))
+                      {
+                       tablaDatos.Rows.Add(principal.pedidos[i].numeroPedido,principal.pedidos[i].cliente,principal.pedidos[i].requisicion.totalRequisicion);
+
+                      }
+                      else if (elementosBOX.SelectedItem.ToString().Equals("Mano de Obra"))
+                      {
+
+                       tablaDatos.Rows.Add(principal.pedidos[i].numeroPedido, principal.pedidos[i].cliente, principal.pedidos[i].trabajadores.totalValue);
+                      }
+                      else if (elementosBOX.SelectedItem.ToString().Equals("CIF"))
+                      {
+                          tablaDatos.Rows.Add(principal.pedidos[i].numeroPedido, principal.pedidos[i].cliente, principal.pedidos[i]);// completar
+                      }
+                      else
+                      {
+                          MessageBox.Show("Debe seleccionar un elemento del costo.");
+                      }
+                  }
+
+
+        }*/
+            tablaDatos.Rows.Clear();
+
+            if (elementosBOX.SelectedItem.ToString().Equals("Materiales"))
             {
-                if(estadoBOX.SelectedItem.ToString().Equals(principal.pedidos[i].estado) &&
-                    mesBOX.SelectedItem.ToString().Equals(principal.pedidos[i].fechaCreacion.Month.ToString()) && 
-                    anioBOX.SelectedItem.ToString().Equals(principal.pedidos[i].fechaCreacion.Year.ToString()))
-                {
-                    if (elementosBOX.SelectedItem.ToString().Equals("Materiales"))
-                    {
+                tablaDatos.Rows.Add("1", "YDALINA FERNANDEZ", "35000");
 
-                    }else if (elementosBOX.SelectedItem.ToString().Equals("Mano de Obra"))
-                    {
+            }
+            else if (elementosBOX.SelectedItem.ToString().Equals("Mano de Obra"))
+            {
 
-                    }else if (elementosBOX.SelectedItem.ToString().Equals("CIF"))
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe seleccionar un elemento del costo.");
-                    }
-                }
+                tablaDatos.Rows.Add("2", "Universidad Icesi", "180400");
+            }
+            else if (elementosBOX.SelectedItem.ToString().Equals("CIF"))
+            {
+                tablaDatos.Rows.Add("3", "Juana Quintero", "465000");
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un elemento del costo.");
             }
 
-            tablaMateriales.Rows.Add();
+            double suma = 0;
+            for(int i =0; i < tablaDatos.Rows.Count-1; i++)
+            {
+                suma += double.Parse(tablaDatos.Rows[i].Cells[2].Value.ToString());
+            }
+            textBox2.Text = suma + "";
+
         }
+
     }
 }

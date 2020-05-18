@@ -41,8 +41,7 @@ namespace Costos_por_órdenes_de_producción.Forms
             //añade los items al comboBox
             for (int i = 0; i < principal.worktypes.Count; i++)
             {
-                listaTipos.Items.Add(principal.worktypes[i].name + 
-                    "-" + principal.worktypes[i].valuePerhour);
+                listaTipos.Items.Add(principal.worktypes[i].name);
             }   
         }
 
@@ -66,7 +65,7 @@ namespace Costos_por_órdenes_de_producción.Forms
                         else
                         {
                             String[] tipochar = tipocomp.Split('/');
-                            MessageBox.Show(tipocomp);
+                           
                            double val = double.Parse(tipochar[1]);
                            principal.worktypes.Add(new Classes.TipoLabor(tipochar[0], val));                             
                         }

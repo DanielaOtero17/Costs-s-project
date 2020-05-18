@@ -31,7 +31,9 @@ namespace Costos_por_órdenes_de_producción.Classes
         public CIF cif { get; set; }
         public String estado { get; set; }
         public int Horas_presupuestadas { get; set; }
+        public double totalPedido { get; set; }
 
+        public double totalCif { get; set; }
 
         public Pedido(int i, int cant, String cli, String art, DateTime fecha)
         {
@@ -46,6 +48,8 @@ namespace Costos_por_órdenes_de_producción.Classes
             cif = null;
             estado = ESTADO_EN_PROCESO;
             Horas_presupuestadas = 0;
+            totalPedido = 0;
+            totalCif = 0;
         }
 
         public Boolean compareTo(String cliente, String entrada)

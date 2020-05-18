@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mesBOX = new System.Windows.Forms.ComboBox();
             this.anioBOX = new System.Windows.Forms.ComboBox();
             this.estadoBOX = new System.Windows.Forms.ComboBox();
             this.elementosBOX = new System.Windows.Forms.ComboBox();
             this.cargarBTN = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.tablaMateriales = new System.Windows.Forms.DataGridView();
-            this.columnaConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tablaDatos = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaMateriales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // mesBOX
@@ -126,55 +124,23 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // tablaMateriales
+            // tablaDatos
             // 
-            this.tablaMateriales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(30)))), ((int)(((byte)(48)))));
-            this.tablaMateriales.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tablaMateriales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.tablaMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaMateriales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnaConcepto,
+            this.tablaDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(30)))), ((int)(((byte)(48)))));
+            this.tablaDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tablaDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaCantidad,
             this.ColumnaValorUnitario,
             this.columnaValorTotal});
-            this.tablaMateriales.Location = new System.Drawing.Point(6, 91);
-            this.tablaMateriales.Name = "tablaMateriales";
-            this.tablaMateriales.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablaMateriales.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.tablaMateriales.Size = new System.Drawing.Size(682, 243);
-            this.tablaMateriales.TabIndex = 34;
-            // 
-            // columnaConcepto
-            // 
-            this.columnaConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnaConcepto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.columnaConcepto.HeaderText = "CONCEPTO";
-            this.columnaConcepto.Name = "columnaConcepto";
-            this.columnaConcepto.ReadOnly = true;
-            // 
-            // columnaCantidad
-            // 
-            this.columnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnaCantidad.HeaderText = "CANTIDAD";
-            this.columnaCantidad.Name = "columnaCantidad";
-            this.columnaCantidad.ReadOnly = true;
-            this.columnaCantidad.Width = 87;
-            // 
-            // ColumnaValorUnitario
-            // 
-            this.ColumnaValorUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnaValorUnitario.HeaderText = "VALOR UNITARIO";
-            this.ColumnaValorUnitario.Name = "ColumnaValorUnitario";
-            this.ColumnaValorUnitario.ReadOnly = true;
-            this.ColumnaValorUnitario.Width = 113;
-            // 
-            // columnaValorTotal
-            // 
-            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
-            this.columnaValorTotal.Name = "columnaValorTotal";
-            this.columnaValorTotal.ReadOnly = true;
+            this.tablaDatos.Location = new System.Drawing.Point(6, 93);
+            this.tablaDatos.Name = "tablaDatos";
+            this.tablaDatos.ReadOnly = true;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaDatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaDatos.Size = new System.Drawing.Size(682, 243);
+            this.tablaDatos.TabIndex = 34;
             // 
             // textBox2
             // 
@@ -196,6 +162,28 @@
             this.label1.TabIndex = 39;
             this.label1.Text = "TOTAL";
             // 
+            // columnaCantidad
+            // 
+            this.columnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.columnaCantidad.HeaderText = "NO. PEDIDO";
+            this.columnaCantidad.Name = "columnaCantidad";
+            this.columnaCantidad.ReadOnly = true;
+            this.columnaCantidad.Width = 95;
+            // 
+            // ColumnaValorUnitario
+            // 
+            this.ColumnaValorUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnaValorUnitario.HeaderText = "CLIENTE";
+            this.ColumnaValorUnitario.Name = "ColumnaValorUnitario";
+            this.ColumnaValorUnitario.ReadOnly = true;
+            // 
+            // columnaValorTotal
+            // 
+            this.columnaValorTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnaValorTotal.HeaderText = "VALOR TOTAL";
+            this.columnaValorTotal.Name = "columnaValorTotal";
+            this.columnaValorTotal.ReadOnly = true;
+            // 
             // RecepcionPeriodos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,7 +192,7 @@
             this.ClientSize = new System.Drawing.Size(700, 384);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.tablaMateriales);
+            this.Controls.Add(this.tablaDatos);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.cargarBTN);
             this.Controls.Add(this.elementosBOX);
@@ -213,7 +201,7 @@
             this.Controls.Add(this.mesBOX);
             this.Name = "RecepcionPeriodos";
             this.Text = "INFORMACIÓN";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaMateriales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,12 +215,11 @@
         private System.Windows.Forms.ComboBox elementosBOX;
         private System.Windows.Forms.Button cargarBTN;
         private System.Windows.Forms.Button button5;
-        public System.Windows.Forms.DataGridView tablaMateriales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaConcepto;
+        public System.Windows.Forms.DataGridView tablaDatos;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaValorUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaValorTotal;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
     }
 }

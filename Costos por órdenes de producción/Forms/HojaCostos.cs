@@ -18,9 +18,12 @@ namespace Costos_por_órdenes_de_producción.Forms
 
         public double totalHorasTrabajadas { get; set; }
 
+        public Classes.Principal principal { get; set; }
+
         public HojaCostos(Classes.Pedido elPedido,RecepcionPedido ventanaAntes)
         {
             InitializeComponent();
+            principal = new Classes.Principal();
             pedido = elPedido;
             textBox2.Text = pedido.numeroPedido + "";
             
@@ -61,6 +64,8 @@ namespace Costos_por_órdenes_de_producción.Forms
                 
             double total = materiales + manoDeObra + cif;
             costoTotal.Text = total + "";
+            principal.cargarPedidos();
+            principal.asignarCIFTotalAPedido(total, int.Parse(textBox2.Text));
         }
 
         public double calcularHorasTrabajadas()
@@ -82,7 +87,7 @@ namespace Costos_por_órdenes_de_producción.Forms
 
                 return tasa;
             }            
-            return 0.1;
+            return 0;
 
         }
 

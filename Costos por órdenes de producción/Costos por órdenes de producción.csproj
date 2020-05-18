@@ -104,12 +104,6 @@
     <Compile Include="Forms\Modify.Designer.cs">
       <DependentUpon>Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Orden.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Orden.Designer.cs">
-      <DependentUpon>Orden.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\RecepcionPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modify.resx">
       <DependentUpon>Modify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Orden.resx">
-      <DependentUpon>Orden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RecepcionPedido.resx">
       <DependentUpon>RecepcionPedido.cs</DependentUpon>

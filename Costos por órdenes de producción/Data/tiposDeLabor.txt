@@ -1,2 +1,4 @@
 ﻿Manufactura/13400
 Ensamblaje/10000
+Construccion/3000
+Gerente/8765

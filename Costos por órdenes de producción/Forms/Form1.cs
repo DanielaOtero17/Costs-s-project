@@ -38,12 +38,7 @@ namespace Costos_por_órdenes_de_producción
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            Orden or = new Orden();
-            or.Show();
-        }
+      
 
         private void Button2_Click(object sender, EventArgs e)
         {

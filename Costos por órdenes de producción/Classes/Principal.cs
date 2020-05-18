@@ -71,6 +71,14 @@ namespace Costos_por_órdenes_de_producción.Classes
 
         }
 
+        public void asignarCIFTotalAPedido(double costo, int numPedido)
+        {
+            Pedido aux = searchPedido(numPedido);
+            int ubicacion = pedidos.IndexOf(aux);
+
+            pedidos[ubicacion].totalCif = costo;
+
+        }
         public void registrarRequisicion(int numPedido, List<Material> materiales,double totalRequi)
         {
             RequisicionMaterial requisicion = new RequisicionMaterial(numPedido, materiales);
@@ -515,14 +523,14 @@ namespace Costos_por_órdenes_de_producción.Classes
             }
             if (!File.Exists(path2))
             {
-                using (StreamWriter sw = File.CreateText(path))
+                using (StreamWriter sw = File.CreateText(path2))
                 {
                     sw.WriteLine(ped.numeroPedido + "/" + ped.estado);
                 }
             }
             else
             {
-                using (StreamWriter sw = File.AppendText(path))
+                using (StreamWriter sw = File.AppendText(path2))
                 {
                     sw.WriteLine(ped.numeroPedido + "/" + ped.estado);
                 }
